@@ -1,10 +1,14 @@
 import { CgMenu, CgClose } from "react-icons/cg";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { lightTheme, darkTheme } from "../redux/action";
 import data from "../data";
 import { Link } from "react-router-dom";
 import Hamburger from "./Hamburger";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const theme = useSelector((state: any) => state.bgcolor);
   const [click, setClick] = useState(false);
 
   return (
@@ -54,6 +58,8 @@ const Navbar = () => {
             />
           )}
         </div>
+        <button onClick={() => dispatch(lightTheme())}>light</button>
+        <button onClick={() => dispatch(darkTheme())}>dark</button>
       </div>
       <div className="bg-gray-400 absolute z-50 w-full mix-blend-overlay md:hidden">
         {click === true && <Hamburger />}
