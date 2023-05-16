@@ -70,13 +70,13 @@ const Navbar = () => {
           onClick={() => setTheme("LIGHT")}
           className={`border-2 ${themeChanger(theme).primaryText}`}
         >
-          light
+          Light Mode
         </button>
         <button
           onClick={() => setTheme("DARK")}
           className={`border-2 ${themeChanger(theme).primaryText}`}
         >
-          dark
+          Dark Mode
         </button>
       </div>
       <div className="bg-gray-400 md:hidden">
