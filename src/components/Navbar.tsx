@@ -1,5 +1,4 @@
-import { GiHamburgerMenu } from "react-icons/gi";
-import { AiFillCloseCircle } from "react-icons/ai";
+import { CgMenu, CgClose } from "react-icons/cg";
 import { useState } from "react";
 import data from "../data";
 import { Link } from "react-router-dom";
@@ -40,14 +39,14 @@ const Navbar = () => {
 
         <div className="md:hidden">
           {click === true ? (
-            <AiFillCloseCircle
+            <CgClose
               style={{ width: "30px", height: "30px" }}
               onClick={() => {
                 setClick(!click);
               }}
             />
           ) : (
-            <GiHamburgerMenu
+            <CgMenu
               style={{ width: "30px", height: "30px" }}
               onClick={() => {
                 setClick(!click);
@@ -56,7 +55,9 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      <div className="bg-gray-400">{click === true && <Hamburger />}</div>
+      <div className="bg-gray-400 absolute z-50 w-full mix-blend-overlay md:hidden">
+        {click === true && <Hamburger />}
+      </div>
     </nav>
   );
 };
