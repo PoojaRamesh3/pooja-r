@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="flex w-full justify-between p-5 md:p-3">
+      <div className="flex w-full justify-between p-5 md:p-3 items-center">
         <div className="">
           <Link
             to="/"
@@ -26,10 +26,7 @@ const Navbar = () => {
         <div className="hidden md:block p-5">
           <ul className="flex w-full justify-between">
             {data.navbar.map((item, index) => (
-              <li
-                key={index}
-                className="px-2 hover:underline hover:decoration-2"
-              >
+              <li key={index} className="hover:underline hover:decoration-2">
                 <Link
                   to={item.url}
                   className="p-5 font-black text-base font-sans"
@@ -58,10 +55,10 @@ const Navbar = () => {
             />
           )}
         </div>
-        <button onClick={() => dispatch(lightTheme())}>light</button>
-        <button onClick={() => dispatch(darkTheme())}>dark</button>
+        {/* <button onClick={() => dispatch(lightTheme())}>light</button>
+        <button onClick={() => dispatch(darkTheme())}>dark</button> */}
       </div>
-      <div className="bg-gray-400 absolute z-50 w-full mix-blend-overlay md:hidden">
+      <div className="bg-gray-400 md:hidden">
         {click === true && <Hamburger />}
       </div>
     </nav>

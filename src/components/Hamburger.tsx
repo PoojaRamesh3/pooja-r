@@ -6,7 +6,10 @@ const Hamburger = () => {
     <ul className="flex-col flex items-center">
       {data.navbar.map((item, index) => (
         <li className="py-2 w-full text-center" key={index}>
-          <Link to={item.url} className="font-semibold text-black">
+          <Link
+            to={item.url}
+            className="font-semibold text-black hover:underline hover:decoration-2"
+          >
             {item.listname}
           </Link>
         </li>
