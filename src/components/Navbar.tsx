@@ -65,6 +65,7 @@ const Navbar = () => {
             />
           )}
         </div>
+
         <button
           onClick={() => setTheme("LIGHT")}
           className={`border-2 ${themeChanger(theme).primaryText}`}
