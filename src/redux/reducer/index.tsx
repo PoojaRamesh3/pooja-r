@@ -1,13 +1,13 @@
 import { LIGHT, DARK } from "../action";
 
 export interface theme {
-  bgcolor: string;
-  textcolor: string;
+  background: string;
+  text: string;
 }
 
 const initialState: theme = {
-  bgcolor: "white",
-  textcolor: "black",
+  background: "bg-white",
+  text: "text-[black]",
 };
 
 const Reducer = (state = initialState, action: any) => {
@@ -15,7 +15,7 @@ const Reducer = (state = initialState, action: any) => {
     case LIGHT:
       return { ...state };
     case DARK:
-      return { ...state, bgcolor: "black", textcolor: "white" };
+      return { ...state, background: "black", text: "white" };
     default:
       return state;
   }

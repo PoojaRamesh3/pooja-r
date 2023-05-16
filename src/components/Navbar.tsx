@@ -5,19 +5,27 @@ import { lightTheme, darkTheme } from "../redux/action";
 import data from "../data";
 import { Link } from "react-router-dom";
 import Hamburger from "./Hamburger";
+import { themeChanger } from "../config/Color";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const theme = useSelector((state: any) => state.bgcolor);
+  //   const theme = useSelector((state: any) => state.bgcolor);
   const [click, setClick] = useState(false);
+  const [theme, setTheme] = useState("LIGHT");
 
   return (
     <nav>
-      <div className="flex w-full justify-between p-5 md:p-3 items-center">
+      <div
+        className={`flex w-full justify-between p-5 md:p-3 items-center ${
+          themeChanger(theme).background
+        }`}
+      >
         <div className="">
           <Link
             to="/"
-            className="font-black text-2xl font-sans hover:underline hover:decoration-4"
+            className={`font-black text-2xl font-sans hover:underline hover:decoration-4 ${
+              themeChanger(theme).primaryText
+            }`}
           >
             {data.name}
           </Link>
@@ -29,7 +37,9 @@ const Navbar = () => {
               <li key={index} className="hover:underline hover:decoration-2">
                 <Link
                   to={item.url}
-                  className="p-5 font-black text-base font-sans"
+                  className={`p-5 font-black text-base font-sans ${
+                    themeChanger(theme).primaryText
+                  }`}
                 >
                   {item.listname}
                 </Link>
@@ -55,8 +65,18 @@ const Navbar = () => {
             />
           )}
         </div>
-        {/* <button onClick={() => dispatch(lightTheme())}>light</button>
-        <button onClick={() => dispatch(darkTheme())}>dark</button> */}
+        <button
+          onClick={() => setTheme("LIGHT")}
+          className={`border-2 ${themeChanger(theme).primaryText}`}
+        >
+          light
+        </button>
+        <button
+          onClick={() => setTheme("DARK")}
+          className={`border-2 ${themeChanger(theme).primaryText}`}
+        >
+          dark
+        </button>
       </div>
       <div className="bg-gray-400 md:hidden">
         {click === true && <Hamburger />}
