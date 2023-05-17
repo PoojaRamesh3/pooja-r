@@ -65,7 +65,7 @@ const Navbar = () => {
                 <FaMoon
                   onClick={themeUpdater}
                   className={`cursor-pointer ${text}`}
-                  style={{ width: "30px", height: "30px" }}
+                  style={{ width: "25px", height: "25px" }}
                 />
               )}
             </div>
@@ -84,7 +84,7 @@ const Navbar = () => {
               <FaMoon
                 onClick={themeUpdater}
                 className={`cursor-pointer ${text}`}
-                style={{ width: "30px", height: "30px" }}
+                style={{ width: "25px", height: "25px" }}
               />
             )}
           </div>
