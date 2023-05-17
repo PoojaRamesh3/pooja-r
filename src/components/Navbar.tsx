@@ -34,55 +34,82 @@ const Navbar = () => {
             {data.name}
           </Link>
         </div>
-
-        <div className="hidden md:block p-5">
-          <ul className="flex w-full justify-between">
-            {data.navbar.map((item, index) => (
-              <li key={index} className="hover:underline hover:decoration-2">
-                <Link
-                  to={item.url}
-                  className={`p-5 font-black text-base font-sans ${text}`}
-                >
-                  {item.listname}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <div className="hidden md:block">
+          <div className="flex items-center">
+            <div className="p-5">
+              <ul className="flex w-full justify-between">
+                {data.navbar.map((item, index) => (
+                  <li
+                    key={index}
+                    className="hover:underline hover:decoration-2"
+                  >
+                    <Link
+                      to={item.url}
+                      className={`p-5 font-black text-base font-sans ${text}`}
+                    >
+                      {item.listname}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              {themeIcon === true ? (
+                <FaSun
+                  onClick={themeUpdater}
+                  className={`cursor-pointer ${text}`}
+                  style={{ width: "30px", height: "30px" }}
+                />
+              ) : (
+                <FaMoon
+                  onClick={themeUpdater}
+                  className={`cursor-pointer ${text}`}
+                  style={{ width: "30px", height: "30px" }}
+                />
+              )}
+            </div>
+          </div>
         </div>
 
-        <div className="md:hidden">
-          {click === true ? (
-            <CgClose
-              style={{ width: "30px", height: "30px" }}
-              onClick={() => {
-                setClick(!click);
-              }}
-            />
-          ) : (
-            <CgMenu
-              style={{ width: "30px", height: "30px" }}
-              onClick={() => {
-                setClick(!click);
-              }}
-            />
-          )}
+        <div className="flex items-center md:hidden">
+          <div className="px-3">
+            {themeIcon === true ? (
+              <FaSun
+                onClick={themeUpdater}
+                className={`cursor-pointer ${text}`}
+                style={{ width: "30px", height: "30px" }}
+              />
+            ) : (
+              <FaMoon
+                onClick={themeUpdater}
+                className={`cursor-pointer ${text}`}
+                style={{ width: "30px", height: "30px" }}
+              />
+            )}
+          </div>
+          <div className="md:hidden">
+            {click === true ? (
+              <CgClose
+                className={`${text}`}
+                style={{ width: "30px", height: "30px" }}
+                onClick={() => {
+                  setClick(!click);
+                }}
+              />
+            ) : (
+              <CgMenu
+                className={`${text}`}
+                style={{ width: "30px", height: "30px" }}
+                onClick={() => {
+                  setClick(!click);
+                }}
+              />
+            )}
+          </div>
         </div>
-        {themeIcon === true ? (
-          <FaSun
-            onClick={themeUpdater}
-            className={`${text}`}
-            style={{ width: "30px", height: "30px" }}
-          />
-        ) : (
-          <FaMoon
-            onClick={themeUpdater}
-            className={`${text}`}
-            style={{ width: "30px", height: "30px" }}
-          />
-        )}
       </div>
-      <div className="bg-gray-400 md:hidden">
-        {click === true && <Hamburger />}
+      <div className={`bg-gray-400 md:hidden ${background}`}>
+        {click === true && <Hamburger textColor={text} />}
       </div>
     </nav>
   );
