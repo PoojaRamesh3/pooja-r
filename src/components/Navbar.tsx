@@ -1,31 +1,35 @@
 import { CgMenu, CgClose } from "react-icons/cg";
+import { FaSun, FaMoon } from "react-icons/fa";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { lightTheme, darkTheme } from "../redux/action";
+import { updateTheme } from "../redux/action";
 import data from "../data";
 import { Link } from "react-router-dom";
 import Hamburger from "./Hamburger";
-import { themeChanger } from "../config/Color";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  //   const theme = useSelector((state: any) => state.bgcolor);
+  const background = useSelector((state: any) => state.theme.background);
+  const text = useSelector((state: any) => state.theme.text);
   const [click, setClick] = useState(false);
-  const [theme, setTheme] = useState("LIGHT");
+  const [theme, setTheme] = useState("light");
+  const [themeIcon, setThemeIcon] = useState(false);
+
+  const themeUpdater = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+    dispatch(updateTheme(theme));
+    setThemeIcon(!themeIcon);
+  };
 
   return (
     <nav>
       <div
-        className={`flex w-full justify-between p-5 md:p-3 items-center ${
-          themeChanger(theme).background
-        }`}
+        className={`flex w-full justify-between p-5 md:p-3 items-center ${background}`}
       >
         <div className="">
           <Link
             to="/"
-            className={`font-black text-2xl font-sans hover:underline hover:decoration-4 ${
-              themeChanger(theme).primaryText
-            }`}
+            className={`font-black text-2xl font-sans hover:underline hover:decoration-4 ${text}`}
           >
             {data.name}
           </Link>
@@ -37,9 +41,7 @@ const Navbar = () => {
               <li key={index} className="hover:underline hover:decoration-2">
                 <Link
                   to={item.url}
-                  className={`p-5 font-black text-base font-sans ${
-                    themeChanger(theme).primaryText
-                  }`}
+                  className={`p-5 font-black text-base font-sans ${text}`}
                 >
                   {item.listname}
                 </Link>
@@ -65,19 +67,19 @@ const Navbar = () => {
             />
           )}
         </div>
-
-        <button
-          onClick={() => setTheme("LIGHT")}
-          className={`border-2 ${themeChanger(theme).primaryText}`}
-        >
-          Light Mode
-        </button>
-        <button
-          onClick={() => setTheme("DARK")}
-          className={`border-2 ${themeChanger(theme).primaryText}`}
-        >
-          Dark Mode
-        </button>
+        {themeIcon === true ? (
+          <FaSun
+            onClick={themeUpdater}
+            className={`${text}`}
+            style={{ width: "30px", height: "30px" }}
+          />
+        ) : (
+          <FaMoon
+            onClick={themeUpdater}
+            className={`${text}`}
+            style={{ width: "30px", height: "30px" }}
+          />
+        )}
       </div>
       <div className="bg-gray-400 md:hidden">
         {click === true && <Hamburger />}

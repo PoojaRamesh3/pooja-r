@@ -1,14 +1,21 @@
-export const LIGHT = "LIGHT";
-export const DARK = "DARK";
+export const THEMECHANGER = "THEMECHANGER";
 
-export function lightTheme() {
-  return {
-    type: LIGHT,
-  };
-}
+export function updateTheme(theme: string) {
+  let updateObj;
+  if (theme === "dark") {
+    updateObj = {
+      background: "bg-gray-900",
+      text: "text-white",
+    };
+  } else {
+    updateObj = {
+      background: "bg-white",
+      text: "text-black",
+    };
+  }
 
-export function darkTheme() {
   return {
-    type: DARK,
+    type: THEMECHANGER,
+    payload: updateObj,
   };
 }
