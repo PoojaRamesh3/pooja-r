@@ -46,7 +46,7 @@ const Navbar = () => {
                   >
                     <Link
                       to={item.url}
-                      className={`p-5 font-black text-base font-sans ${text}`}
+                      className={`p-5 font-bold text-base font-sans ${text}`}
                     >
                       {item.listname}
                     </Link>

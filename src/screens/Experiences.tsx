@@ -1,9 +1,10 @@
 import Heading from "../components/Heading";
+import data from "../data";
 
 const Experiences = () => {
   return (
     <>
-      <Heading heading="Experiences" />
+      <Heading heading={data.experiences.heading} />
     </>
   );
 };

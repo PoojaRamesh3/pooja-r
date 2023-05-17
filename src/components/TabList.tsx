@@ -60,7 +60,7 @@ const TabList = () => {
           Tab 2
         </li>
       </ul>
-      <div className="outlet">
+      <div>
         {activeTab === "tab1" ? (
           <Tab title={"First"} />
         ) : (

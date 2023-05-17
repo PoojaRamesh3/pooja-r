@@ -6,7 +6,7 @@ const Heading = (props: any) => {
 
   return (
     <div className={`p-5 text-center ${background}`}>
-      <h2 className={`text-2xl py-5 font-bold ${text} md:text-6xl `}>
+      <h2 className={`text-2xl py-5 font-bold ${text} md:text-4xl font-sans`}>
         {props.heading}
       </h2>
     </div>
