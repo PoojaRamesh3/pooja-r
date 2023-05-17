@@ -1,5 +1,11 @@
+import Heading from "../components/Heading";
+
 const Projects = () => {
-  return <div>Projects</div>;
+  return (
+    <>
+      <Heading heading="Projects" />
+    </>
+  );
 };
 
 export default Projects;

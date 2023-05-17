@@ -1,11 +1,11 @@
 import Heading from "../components/Heading";
 
-const Home = () => {
+const Skills = () => {
   return (
     <>
-      <Heading heading="Home" />
+      <Heading heading="Skills" />
     </>
   );
 };
 
-export default Home;
+export default Skills;

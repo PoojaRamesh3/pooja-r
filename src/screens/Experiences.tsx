@@ -1,5 +1,11 @@
+import Heading from "../components/Heading";
+
 const Experiences = () => {
-  return <div>Experiences</div>;
+  return (
+    <>
+      <Heading heading="Experiences" />
+    </>
+  );
 };
 
 export default Experiences;

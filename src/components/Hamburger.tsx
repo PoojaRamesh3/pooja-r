@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Hamburger = (props: any) => {
   return (
-    <ul className="flex-col flex items-center">
+    <ul className="flex-col flex items-center border-b pb-5">
       {data.navbar.map((item, index) => (
         <li className="py-2 w-full text-center" key={index}>
           <Link

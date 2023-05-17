@@ -1,5 +1,11 @@
+import Heading from "../components/Heading";
+
 const Certificates = () => {
-  return <div>Certificates</div>;
+  return (
+    <>
+      <Heading heading="Certificates" />
+    </>
+  );
 };
 
 export default Certificates;
