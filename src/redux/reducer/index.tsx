@@ -1,6 +1,7 @@
 import { THEMECHANGER } from "../action";
 
 export interface theme {
+  initialTheme: string;
   theme: {
     background: string;
     text: string;
@@ -8,6 +9,7 @@ export interface theme {
 }
 
 const initialState: theme = {
+  initialTheme: "dark",
   theme: {
     background: "bg-white",
     text: "text-black",

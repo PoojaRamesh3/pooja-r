@@ -11,8 +11,9 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const background = useSelector((state: any) => state.theme.background);
   const text = useSelector((state: any) => state.theme.text);
+  const initialTheme = useSelector((state: any) => state.initialTheme);
   const [click, setClick] = useState(false);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(initialTheme);
   const [themeIcon, setThemeIcon] = useState(false);
 
   const themeUpdater = () => {

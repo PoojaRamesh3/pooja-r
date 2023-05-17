@@ -6,13 +6,14 @@ const data = {
       url: "/",
     },
     {
+      listname: "Skills",
+      url: "/skills",
+    },
+    {
       listname: "Projects",
       url: "/projects",
     },
-    {
-      listname: "Tools",
-      url: "/tools",
-    },
+
     {
       listname: "Experiences",
       url: "/experiences",
