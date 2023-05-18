@@ -38,8 +38,8 @@ const TabList = () => {
           }`}
             onClick={() => handleTab(item.tab)}
           >
-            <div className="flex">
-              <div>{item.img}</div>
+            <div className="flex justify-center ">
+              <div className="pr-2">{item.img}</div>
               <div>{item.tab}</div>
             </div>
           </li>

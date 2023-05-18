@@ -1,4 +1,7 @@
-import { FaLanguage } from "react-icons/fa";
+import { DiJavascript } from "react-icons/di";
+import { BsGit } from "react-icons/bs";
+import { RiReactjsLine } from "react-icons/ri";
+import { IoLogoNodejs } from "react-icons/io";
 
 export const content = {
   name: "Pooja R",
@@ -33,19 +36,19 @@ export const content = {
     tabs: [
       {
         tab: "Languages",
-        img: <FaLanguage />,
+        img: <DiJavascript style={{ width: "25px", height: "25px" }} />,
       },
       {
         tab: "Frontend Development",
-        img: <FaLanguage />,
+        img: <RiReactjsLine style={{ width: "25px", height: "25px" }} />,
       },
       {
         tab: "Backend Development",
-        img: <FaLanguage />,
+        img: <IoLogoNodejs style={{ width: "25px", height: "25px" }} />,
       },
       {
         tab: "DevOps",
-        img: <FaLanguage />,
+        img: <BsGit style={{ width: "25px", height: "25px" }} />,
       },
     ],
   },
