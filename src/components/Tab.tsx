@@ -10,6 +10,7 @@ const Tab = (props: any) => {
         {props.title.info?.map((item: any, index: any) => {
           return (
             <a
+              rel="noreferrer"
               target="_blank"
               href={item.url}
               className={`flex items-center basis-[45%] ${background} ${text} px-4 py-3 border-2 mb-10 shadow-slate-300 ${
