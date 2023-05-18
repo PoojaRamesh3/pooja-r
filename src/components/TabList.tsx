@@ -42,7 +42,7 @@ const TabList = () => {
         ))}
       </ul>
       {data.skills.tabs.map((item) => (
-        <div>{activeTab === item.tab && <Tab title={item.heading} />}</div>
+        <div>{activeTab === item.tab && <Tab title={item.tab} />}</div>
       ))}
     </div>
   );

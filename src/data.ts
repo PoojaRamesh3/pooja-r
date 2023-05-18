@@ -31,19 +31,15 @@ const data = {
     tabs: [
       {
         tab: "Languages",
-        heading: "First",
       },
       {
         tab: "Frontend Development",
-        heading: "Second",
       },
       {
         tab: "Backend Development",
-        heading: "Third",
       },
       {
         tab: "DevOps",
-        heading: "Fourth",
       },
     ],
   },
