@@ -15,9 +15,7 @@ const TabList = () => {
   return (
     <div className={`text-center p-5 ${background} ${text}`}>
       <ul
-        className={`nav w-4/5 flex justify-between items-center mb-12 border-2 mx-auto flex-wrap md:flex-nowrap ${
-          text === "text-white" ? "border-white" : "border-black"
-        }`}
+        className={`nav w-4/5 flex justify-between items-center mb-12 mx-auto flex-wrap md:flex-nowrap `}
       >
         {content.skills.tabs.map((item, index) => (
           <>

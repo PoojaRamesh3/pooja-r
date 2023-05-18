@@ -12,10 +12,10 @@ const Tab = (props: any) => {
             <a
               target="_blank"
               href={item.url}
-              className={`flex items-center basis-[45%] ${background} ${text} px-4 py-3 shadow-slate-300 border-2 mb-10 ${
+              className={`flex items-center basis-[45%] ${background} ${text} px-4 py-3 border-2 mb-10 shadow-slate-300 ${
                 text === "text-white"
                   ? "border-white shadow-md"
-                  : "border-black shadow-xl"
+                  : "border-black shadow-2xl"
               }`}
               key={index}
             >
@@ -26,7 +26,9 @@ const Tab = (props: any) => {
                 <div className="font-bold text-xl font-sans mr-3">
                   {item.language}
                 </div>
-                <div className="font-bold text-base font-sans">
+                <div
+                  className={`font-bold text-base text-black font-sans ${item.bgCol} px-2 py-1 rounded-xl`}
+                >
                   {item.level}
                 </div>
               </div>
