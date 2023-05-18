@@ -1,10 +1,10 @@
 import Heading from "../components/Heading";
-import data from "../data";
+import { content } from "../content";
 
 const Home = () => {
   return (
     <>
-      <Heading heading={data.home.heading} />
+      <Heading heading={content.home.heading} />
     </>
   );
 };

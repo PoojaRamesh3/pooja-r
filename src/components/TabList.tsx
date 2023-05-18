@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import Tab from "./Tab";
-import data from "../data";
+import { content } from "../content";
 
 const TabList = () => {
-  const [activeTab, setActiveTab] = useState(data.skills.tabs[0].tab);
+  const [activeTab, setActiveTab] = useState(content.skills.tabs[0].tab);
   const background = useSelector((state: any) => state.theme.background);
   const text = useSelector((state: any) => state.theme.text);
 
@@ -19,9 +19,10 @@ const TabList = () => {
           text === "text-white" ? "border-white" : "border-black"
         }`}
       >
-        {data.skills.tabs.map((item) => (
+        {content.skills.tabs.map((item, index) => (
           <li
-            className={`w-1/2 p-4 text-center cursor-pointer transition-all duration-0 ${
+            key={index}
+            className={`w-1/2 p-4 text-center cursor-pointer transition-all font-semibold duration-0 ${
               activeTab === "tab1" && text === "text-white"
                 ? "bg-white text-black"
                 : ""
@@ -37,12 +38,17 @@ const TabList = () => {
           }`}
             onClick={() => handleTab(item.tab)}
           >
-            {item.tab}
+            <div className="flex">
+              <div>{item.img}</div>
+              <div>{item.tab}</div>
+            </div>
           </li>
         ))}
       </ul>
-      {data.skills.tabs.map((item) => (
-        <div>{activeTab === item.tab && <Tab title={item.tab} />}</div>
+      {content.skills.tabs.map((item, index) => (
+        <div key={index}>
+          {activeTab === item.tab && <Tab title={item.tab} />}
+        </div>
       ))}
     </div>
   );

@@ -1,4 +1,6 @@
-const data = {
+import { FaLanguage } from "react-icons/fa";
+
+export const content = {
   name: "Pooja R",
   navbar: [
     {
@@ -31,15 +33,19 @@ const data = {
     tabs: [
       {
         tab: "Languages",
+        img: <FaLanguage />,
       },
       {
         tab: "Frontend Development",
+        img: <FaLanguage />,
       },
       {
         tab: "Backend Development",
+        img: <FaLanguage />,
       },
       {
         tab: "DevOps",
+        img: <FaLanguage />,
       },
     ],
   },
@@ -53,5 +59,3 @@ const data = {
     heading: "Certificates",
   },
 };
-
-export default data;

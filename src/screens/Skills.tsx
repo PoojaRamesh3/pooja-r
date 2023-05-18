@@ -1,11 +1,11 @@
 import Heading from "../components/Heading";
 import TabList from "../components/TabList";
-import data from "../data";
+import { content } from "../content";
 
 const Skills = () => {
   return (
     <>
-      <Heading heading={data.skills.heading} />
+      <Heading heading={content.skills.heading} />
       <TabList />
     </>
   );
