@@ -30,13 +30,20 @@ const data = {
     heading: "Skills",
     tabs: [
       {
-        tab1: "Languages",
+        tab: "Languages",
+        heading: "First",
       },
       {
-        tab2: "Full Stack Development",
+        tab: "Frontend Development",
+        heading: "Second",
       },
       {
-        tab3: "Tab3",
+        tab: "Backend Development",
+        heading: "Third",
+      },
+      {
+        tab: "DevOps",
+        heading: "Fourth",
       },
     ],
   },
