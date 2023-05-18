@@ -2,6 +2,11 @@ import { DiJavascript } from "react-icons/di";
 import { BsGit } from "react-icons/bs";
 import { RiReactjsLine } from "react-icons/ri";
 import { IoLogoNodejs } from "react-icons/io";
+import C from "./assets/c.png";
+import Cpp from "./assets/c++.png";
+import CSharp from "./assets/Csharp.png";
+import JavaScript from "./assets/python.png";
+import Python from "./assets/python.png";
 
 export const content = {
   name: "Pooja R",
@@ -37,18 +42,96 @@ export const content = {
       {
         tab: "Languages",
         img: <DiJavascript style={{ width: "25px", height: "25px" }} />,
+        info: [
+          {
+            logo: C,
+            language: "C",
+            level: "Intermediate",
+          },
+          {
+            logo: Cpp,
+            language: "C++",
+            level: "Advance",
+          },
+          {
+            logo: CSharp,
+            language: "C#",
+            level: "Intermediate",
+          },
+          {
+            logo: JavaScript,
+            language: "JavaScript",
+            level: "Advance",
+          },
+          {
+            logo: Python,
+            language: "Python",
+            level: "Beginner",
+          },
+        ],
       },
       {
         tab: "Frontend Development",
         img: <RiReactjsLine style={{ width: "25px", height: "25px" }} />,
+        info: [
+          {
+            logo: C,
+            language: "HTML5",
+            level: "Advance",
+          },
+          {
+            logo: Cpp,
+            language: "CSS3",
+            level: "Advance",
+          },
+          {
+            logo: CSharp,
+            language: "Bootstrap",
+            level: "Advance",
+          },
+          {
+            logo: JavaScript,
+            language: "React Js",
+            level: "Intermediate",
+          },
+          {
+            logo: Python,
+            language: "Tailwind",
+            level: "Advance",
+          },
+        ],
       },
       {
         tab: "Backend Development",
         img: <IoLogoNodejs style={{ width: "25px", height: "25px" }} />,
+        info: [
+          {
+            logo: C,
+            language: "NodeJs",
+            level: "Intermediate",
+          },
+          {
+            logo: Cpp,
+            language: "ASP.NET Core",
+            level: "Intermediate",
+          },
+        ],
       },
       {
         tab: "DevOps",
         img: <BsGit style={{ width: "25px", height: "25px" }} />,
+        info: [
+          {
+            logo: C,
+            language: "Git",
+            level: "Advance",
+          },
+          {
+            logo: Cpp,
+            language: "Github",
+            level: "Advance",
+          },
+        ],
       },
     ],
   },
