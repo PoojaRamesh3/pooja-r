@@ -10,20 +10,25 @@ const Tab = (props: any) => {
         {props.title.info?.map((item: any, index: any) => {
           return (
             <a
-              href="#"
-              className={`flex items-center basis-[45%] shadow-xl ${background} ${text} px-3 py-2 border-2 mb-10 ${
+              target="_blank"
+              href={item.url}
+              className={`flex items-center basis-[45%] ${background} ${text} px-4 py-3 shadow-slate-300 border-2 mb-10 ${
                 text === "text-white"
-                  ? "border-white shadow-slate-100"
-                  : "border-black shadow-slate-300"
+                  ? "border-white shadow-md"
+                  : "border-black shadow-xl"
               }`}
               key={index}
             >
-              <div>
+              <div className={`p-1.5 mr-5 ${item.bgCol} rounded-xl`}>
                 <img src={item.logo} alt="" className="w-14 h-14" />
               </div>
-              <div className="flex">
-                <div>{item.language}</div>
-                <div>{item.level}</div>
+              <div className="flex items-center">
+                <div className="font-bold text-xl font-sans mr-3">
+                  {item.language}
+                </div>
+                <div className="font-bold text-base font-sans">
+                  {item.level}
+                </div>
               </div>
             </a>
           );
