@@ -42,11 +42,6 @@ const TabList = () => {
                 <div>{item.tab}</div>
               </div>
             </li>
-            {/* <div>
-              {item.info?.map((item, index) => {
-                return <div>{item.level}</div>;
-              })}
-            </div> */}
           </>
         ))}
       </ul>
