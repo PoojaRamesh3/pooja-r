@@ -1,7 +1,7 @@
 import Heading from "../components/Heading";
 import { content } from "../content";
 
-const Certificates = () => {
+const Contact = () => {
   return (
     <>
       <Heading heading={content.certificates.heading} />
@@ -9,4 +9,4 @@ const Certificates = () => {
   );
 };
 
-export default Certificates;
+export default Contact;

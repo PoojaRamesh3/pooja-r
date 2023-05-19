@@ -4,7 +4,7 @@ import Home from "./screens/Home";
 import Projects from "./screens/Projects";
 import Skills from "./screens/Skills";
 import Experiences from "./screens/Experiences";
-import Certificates from "./screens/Certificates";
+import Contact from "./screens/Contact";
 
 const Router = () => {
   return (
@@ -15,7 +15,7 @@ const Router = () => {
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/experiences" element={<Experiences />} />
-          <Route path="/certificates" element={<Certificates />} />
+          <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>
     </BrowserRouter>
