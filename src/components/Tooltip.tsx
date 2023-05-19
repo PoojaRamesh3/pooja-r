@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
-import { tooltipPostitionEnum, ITooltip } from "../configuration";
+import { tooltipPostitionEnum, ITooltip } from "../config";
 import "../styles/Tooltip.css";
 
 const Tooltip = ({ content, position, disabled, children }: ITooltip) => {

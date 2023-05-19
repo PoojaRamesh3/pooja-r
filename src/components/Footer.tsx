@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { content } from "../content";
 import Tooltip from "./Tooltip";
-import { tooltipPostitionEnum } from "../configuration";
+import { tooltipPostitionEnum } from "../config";
 
 const Footer = () => {
   const background = useSelector((state: any) => state.theme.background);

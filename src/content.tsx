@@ -2,7 +2,12 @@ import { DiJavascript } from "react-icons/di";
 import { BsGit, BsGithub } from "react-icons/bs";
 import { RiReactjsLine } from "react-icons/ri";
 import { IoLogoNodejs } from "react-icons/io";
-import { SiTypescript, SiTailwindcss, SiLeetcode } from "react-icons/si";
+import {
+  SiTypescript,
+  SiTailwindcss,
+  SiLeetcode,
+  SiGmail,
+} from "react-icons/si";
 import { AiFillLinkedin } from "react-icons/ai";
 import C from "./assets/c.png";
 import Cpp from "./assets/c++.png";
@@ -263,6 +268,11 @@ export const content = {
       },
     ],
     socialicons: [
+      {
+        icon: <SiGmail style={{ width: "25px", height: "25px" }} />,
+        name: "Email",
+        url: "mailto:pooja.ramesh331@gmail.com",
+      },
       {
         name: "GitHub",
         icon: <BsGithub style={{ width: "25px", height: "25px" }} />,
