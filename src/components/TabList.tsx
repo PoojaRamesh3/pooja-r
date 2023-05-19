@@ -21,7 +21,16 @@ const TabList = () => {
           <li
             onClick={() => handleTab(item.tab)}
             key={index}
-            className={`w-1/2 p-4 text-center cursor-pointer transition-all font-semibold duration-0 `}
+            className={`${
+              activeTab === item.tab && background === "bg-white"
+                ? "bg-black text-white"
+                : ""
+            }
+            ${
+              activeTab === item.tab && text === "text-white"
+                ? "bg-white text-black"
+                : ""
+            } rounded-full w-1/2 p-4 text-center cursor-pointer transition-all font-semibold duration-0 `}
           >
             <div className={`flex justify-center `}>
               <div className="pr-2">{item.img}</div>
