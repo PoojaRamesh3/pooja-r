@@ -245,14 +245,17 @@ export const content = {
       {
         icon: <RiReactjsLine style={{ width: "25px", height: "25px" }} />,
         name: "React Js",
+        url: "https://reactjs.org/",
       },
       {
         icon: <SiTypescript style={{ width: "20px", height: "25px" }} />,
         name: "TypeScript",
+        url: "https://www.typescriptlang.org/",
       },
       {
         icon: <SiTailwindcss style={{ width: "25px", height: "25px" }} />,
         name: "Tailwind CSS",
+        url: "https://tailwindcss.com/",
       },
     ],
     socialicons: [

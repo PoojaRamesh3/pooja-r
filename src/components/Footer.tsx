@@ -23,9 +23,15 @@ const Footer = () => {
               position={tooltipPostitionEnum.Up}
               content={item.name}
             >
-              <div className="p-2 cursor-pointer" key={index}>
+              <a
+                className="p-2 cursor-pointer"
+                key={index}
+                href={item.url}
+                target="_blank"
+                rel="noreferrer"
+              >
                 {item.icon}
-              </div>
+              </a>
             </Tooltip>
           ))}
         </div>
@@ -34,7 +40,7 @@ const Footer = () => {
             <a
               key={index}
               className={`p-2 cursor-pointer hover:animate-bounce`}
-              href="https://github.com/PoojaRamesh3"
+              href={item.url}
               target="_blank"
               rel="noreferrer"
             >
