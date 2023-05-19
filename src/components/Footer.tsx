@@ -19,13 +19,13 @@ const Footer = () => {
 
           {content.footer.icons.map((item, index) => (
             <Tooltip
+              key={index}
               disabled={false}
               position={tooltipPostitionEnum.Up}
               content={item.name}
             >
               <a
                 className="py-2 px-3 block cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110"
-                key={index}
                 href={item.url}
                 target="_blank"
                 rel="noreferrer"
@@ -38,12 +38,12 @@ const Footer = () => {
         <div className={`flex justify-center`}>
           {content.footer.socialicons.map((item, index) => (
             <Tooltip
+              key={index}
               disabled={false}
               position={tooltipPostitionEnum.Up}
               content={item.name}
             >
               <a
-                key={index}
                 className={`p-5 cursor-pointer block transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110`}
                 href={item.url}
                 target="_blank"

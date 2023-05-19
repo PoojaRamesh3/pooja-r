@@ -59,6 +59,7 @@ export const content = {
     tabs: [
       {
         tab: "Languages",
+        color: "bg-sky-200",
         img: <DiJavascript style={{ width: "25px", height: "25px" }} />,
         info: [
           {
@@ -100,6 +101,7 @@ export const content = {
       },
       {
         tab: "Frontend Development",
+        color: "bg-sky-300",
         img: <RiReactjsLine style={{ width: "25px", height: "25px" }} />,
         info: [
           {
@@ -162,6 +164,7 @@ export const content = {
       },
       {
         tab: "Backend Development",
+        color: "bg-sky-400",
         img: <IoLogoNodejs style={{ width: "25px", height: "25px" }} />,
         info: [
           {
@@ -203,6 +206,7 @@ export const content = {
       },
       {
         tab: "DevOps",
+        color: "bg-sky-500",
         img: <BsGit style={{ width: "25px", height: "25px" }} />,
         info: [
           {
