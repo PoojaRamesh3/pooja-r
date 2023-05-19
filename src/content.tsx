@@ -12,6 +12,13 @@ import Css from "./assets/css.png";
 import Bootstrap from "./assets/bootstrap.png";
 import Tailwind from "./assets/tailwind.png";
 import React from "./assets/react.png";
+import HubSpot from "./assets/hubSpot.png";
+import Sass from "./assets/sass.png";
+import WordPress from "./assets/wordpress.png";
+import NodeJs from "./assets/node.png";
+import AspDotNET from "./assets/dotNet.png";
+import Git from "./assets/git.png";
+import GitHub from "./assets/github.png";
 
 export const content = {
   name: "Pooja R",
@@ -118,11 +125,32 @@ export const content = {
             bgCol: "bg-sky-200",
           },
           {
+            logo: Sass,
+            language: "Sass",
+            level: "Advance",
+            url: "https://sass-lang.com/",
+            bgCol: "bg-pink-200",
+          },
+          {
             logo: React,
             language: "React Js",
             level: "Intermediate",
             url: "https://reactjs.org/",
             bgCol: "bg-cyan-100",
+          },
+          {
+            logo: WordPress,
+            language: "WordPress",
+            level: "Intermediate",
+            url: "https://wordpress.com/",
+            bgCol: "bg-blue-200",
+          },
+          {
+            logo: HubSpot,
+            language: "HubSpot",
+            level: "Advance",
+            url: "https://www.hubspot.com/products/crm",
+            bgCol: "bg-slate-400",
           },
         ],
       },
@@ -131,14 +159,18 @@ export const content = {
         img: <IoLogoNodejs style={{ width: "25px", height: "25px" }} />,
         info: [
           {
-            logo: C,
+            logo: NodeJs,
             language: "NodeJs",
             level: "Intermediate",
+            url: "https://nodejs.org/en/docs",
+            bgCol: "bg-lime-200",
           },
           {
-            logo: Cpp,
+            logo: AspDotNET,
             language: "ASP.NET Core",
             level: "Intermediate",
+            url: "https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-7.0",
+            bgCol: "bg-cyan-200",
           },
         ],
       },
@@ -147,14 +179,18 @@ export const content = {
         img: <BsGit style={{ width: "25px", height: "25px" }} />,
         info: [
           {
-            logo: C,
+            logo: Git,
             language: "Git",
             level: "Advance",
+            url: "https://git-scm.com/",
+            bgCol: "bg-orange-200",
           },
           {
-            logo: Cpp,
+            logo: GitHub,
             language: "Github",
             level: "Advance",
+            url: "http://github.com/",
+            bgCol: "bg-slate-400",
           },
         ],
       },
