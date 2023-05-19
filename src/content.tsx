@@ -17,6 +17,9 @@ import Sass from "./assets/sass.png";
 import WordPress from "./assets/wordpress.png";
 import NodeJs from "./assets/node.png";
 import AspDotNET from "./assets/dotNet.png";
+import Postgre from "./assets/postgre.png";
+import MangoDB from "./assets/mangoDb.png";
+import Sql from "./assets/sql.png";
 import Git from "./assets/git.png";
 import GitHub from "./assets/github.png";
 import Aws from "./assets/aws.png";
@@ -172,6 +175,27 @@ export const content = {
             level: "Intermediate",
             url: "https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-7.0",
             bgCol: "bg-cyan-200",
+          },
+          {
+            logo: Postgre,
+            language: "PostgreSQL",
+            level: "Intermediate",
+            url: "https://www.postgresql.org/",
+            bgCol: "bg-cyan-600",
+          },
+          {
+            logo: Sql,
+            language: "MySQL",
+            level: "Intermediate",
+            url: "https://www.mysql.com/",
+            bgCol: "bg-orange-300",
+          },
+          {
+            logo: MangoDB,
+            language: "MangoDB",
+            level: "Beginner",
+            url: "https://www.mongodb.com/",
+            bgCol: "bg-green-300",
           },
         ],
       },
