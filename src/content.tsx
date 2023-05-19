@@ -19,6 +19,7 @@ import NodeJs from "./assets/node.png";
 import AspDotNET from "./assets/dotNet.png";
 import Git from "./assets/git.png";
 import GitHub from "./assets/github.png";
+import Aws from "./assets/aws.png";
 
 export const content = {
   name: "Pooja R",
@@ -150,7 +151,7 @@ export const content = {
             language: "HubSpot",
             level: "Advance",
             url: "https://www.hubspot.com/products/crm",
-            bgCol: "bg-slate-400",
+            bgCol: "bg-orange-500",
           },
         ],
       },
@@ -191,6 +192,13 @@ export const content = {
             level: "Advance",
             url: "http://github.com/",
             bgCol: "bg-slate-400",
+          },
+          {
+            logo: Aws,
+            language: "AWS",
+            level: "Beginner",
+            url: "http://aws.amazon.com/",
+            bgCol: "bg-orange-300",
           },
         ],
       },
