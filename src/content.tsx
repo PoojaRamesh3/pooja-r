@@ -244,7 +244,7 @@ export const content = {
     icons: [
       {
         icon: <RiReactjsLine style={{ width: "25px", height: "25px" }} />,
-        name: "React Js",
+        name: "React JS",
         url: "https://reactjs.org/",
       },
       {

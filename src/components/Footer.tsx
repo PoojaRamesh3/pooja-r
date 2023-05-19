@@ -10,12 +10,12 @@ const Footer = () => {
   return (
     <>
       <div
-        className={`p-3 border-t-2 flex justify-between ${
+        className={`p-3 border-t-2 flex flex-col md:flex-row justify-between ${
           background === "bg-white" ? "border-black" : "border-white"
         } ${text} `}
       >
         <div className="flex justify-center items-center">
-          <h3 className={`font-semibold`}>{content.footer.conclusion}</h3>
+          <h3 className={`font-semibold pl-5`}>{content.footer.conclusion}</h3>
 
           {content.footer.icons.map((item, index) => (
             <Tooltip
@@ -24,7 +24,7 @@ const Footer = () => {
               content={item.name}
             >
               <a
-                className="p-2 cursor-pointer"
+                className="p-2 block cursor-pointer"
                 key={index}
                 href={item.url}
                 target="_blank"
@@ -35,11 +35,11 @@ const Footer = () => {
             </Tooltip>
           ))}
         </div>
-        <div className={`flex`}>
+        <div className={`flex justify-center`}>
           {content.footer.socialicons.map((item, index) => (
             <a
               key={index}
-              className={`p-2 cursor-pointer hover:animate-bounce`}
+              className={`p-5 cursor-pointer hover:animate-bounce`}
               href={item.url}
               target="_blank"
               rel="noreferrer"

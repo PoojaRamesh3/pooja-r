@@ -8,9 +8,11 @@ const Layout = () => {
   console.log(background, "background");
 
   return (
-    <div className={`${background} min-h-screen`}>
-      <Navbar />
-      <Outlet />
+    <div className={`${background}`}>
+      <div className={`min-h-screen`}>
+        <Navbar />
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

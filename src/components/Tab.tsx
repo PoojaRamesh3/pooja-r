@@ -13,7 +13,7 @@ const Tab = (props: any) => {
               rel="noreferrer"
               target="_blank"
               href={item.url}
-              className={`flex items-center basis-9/12 md:basis-2/5 lg:basis-[45%] ${background} ${text} px-4 py-3 border-2 mb-10 shadow-slate-300 ${
+              className={`flex rounded-3xl items-center basis-9/12 md:basis-2/5 lg:basis-[45%] ${background} ${text} px-4 py-3 border-2 mb-10 shadow-slate-300 ${
                 text === "text-white"
                   ? "border-white shadow-md"
                   : "border-black shadow-2xl"

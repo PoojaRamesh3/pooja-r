@@ -23,7 +23,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
+    <nav
+      className={`border-b-2 fixed top-0 right-0 w-full ${
+        background === "bg-white" ? "border-black" : "border-white"
+      } ${text}`}
+    >
       <div
         className={`flex w-full justify-between p-5 md:p-3 items-center ${background}`}
       >
