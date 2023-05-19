@@ -24,7 +24,7 @@ const Footer = () => {
               content={item.name}
             >
               <a
-                className="p-2 block cursor-pointer"
+                className="py-2 px-3 block cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110"
                 key={index}
                 href={item.url}
                 target="_blank"
@@ -37,15 +37,21 @@ const Footer = () => {
         </div>
         <div className={`flex justify-center`}>
           {content.footer.socialicons.map((item, index) => (
-            <a
-              key={index}
-              className={`p-5 cursor-pointer hover:animate-bounce`}
-              href={item.url}
-              target="_blank"
-              rel="noreferrer"
+            <Tooltip
+              disabled={false}
+              position={tooltipPostitionEnum.Up}
+              content={item.name}
             >
-              {item.icon}
-            </a>
+              <a
+                key={index}
+                className={`p-5 cursor-pointer block transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110`}
+                href={item.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {item.icon}
+              </a>
+            </Tooltip>
           ))}
         </div>
       </div>

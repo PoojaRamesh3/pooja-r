@@ -2,7 +2,7 @@ import { DiJavascript } from "react-icons/di";
 import { BsGit, BsGithub } from "react-icons/bs";
 import { RiReactjsLine } from "react-icons/ri";
 import { IoLogoNodejs } from "react-icons/io";
-import { SiTypescript, SiTailwindcss } from "react-icons/si";
+import { SiTypescript, SiTailwindcss, SiLeetcode } from "react-icons/si";
 import { AiFillLinkedin } from "react-icons/ai";
 import C from "./assets/c.png";
 import Cpp from "./assets/c++.png";
@@ -260,12 +260,19 @@ export const content = {
     ],
     socialicons: [
       {
+        name: "GitHub",
         icon: <BsGithub style={{ width: "25px", height: "25px" }} />,
         url: "https://github.com/PoojaRamesh3",
       },
       {
+        name: "LinkedIn",
         icon: <AiFillLinkedin style={{ width: "25px", height: "25px" }} />,
         url: "https://www.linkedin.com/in/pooja--r/",
+      },
+      {
+        name: "LeetCode",
+        icon: <SiLeetcode style={{ width: "25px", height: "25px" }} />,
+        url: "https://leetcode.com/PoojaRamesh3/",
       },
     ],
   },
