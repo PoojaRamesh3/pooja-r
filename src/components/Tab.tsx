@@ -6,14 +6,14 @@ const Tab = (props: any) => {
 
   return (
     <div className={`text-center p-5`}>
-      <div className="flex items-center flex-wrap justify-between">
+      <div className="flex items-center flex-wrap lg:justify-between md:justify-evenly justify-center">
         {props.title.info?.map((item: any, index: any) => {
           return (
             <a
               rel="noreferrer"
               target="_blank"
               href={item.url}
-              className={`flex items-center basis-[45%] ${background} ${text} px-4 py-3 border-2 mb-10 shadow-slate-300 ${
+              className={`flex items-center basis-9/12 md:basis-2/5 lg:basis-[45%] ${background} ${text} px-4 py-3 border-2 mb-10 shadow-slate-300 ${
                 text === "text-white"
                   ? "border-white shadow-md"
                   : "border-black shadow-2xl"

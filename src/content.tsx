@@ -1,7 +1,9 @@
 import { DiJavascript } from "react-icons/di";
-import { BsGit } from "react-icons/bs";
+import { BsGit, BsGithub } from "react-icons/bs";
 import { RiReactjsLine } from "react-icons/ri";
 import { IoLogoNodejs } from "react-icons/io";
+import { SiTypescript, SiTailwindcss } from "react-icons/si";
+import { AiFillLinkedin } from "react-icons/ai";
 import C from "./assets/c.png";
 import Cpp from "./assets/c++.png";
 import CSharp from "./assets/Csharp.png";
@@ -236,5 +238,32 @@ export const content = {
   },
   certificates: {
     heading: "Certificates",
+  },
+  footer: {
+    conclusion: "Built by Pooja R using :",
+    icons: [
+      {
+        icon: <RiReactjsLine style={{ width: "25px", height: "25px" }} />,
+        name: "React Js",
+      },
+      {
+        icon: <SiTypescript style={{ width: "20px", height: "25px" }} />,
+        name: "TypeScript",
+      },
+      {
+        icon: <SiTailwindcss style={{ width: "25px", height: "25px" }} />,
+        name: "Tailwind CSS",
+      },
+    ],
+    socialicons: [
+      {
+        icon: <BsGithub style={{ width: "25px", height: "25px" }} />,
+        url: "https://github.com/PoojaRamesh3",
+      },
+      {
+        icon: <AiFillLinkedin style={{ width: "25px", height: "25px" }} />,
+        url: "https://www.linkedin.com/in/pooja--r/",
+      },
+    ],
   },
 };
