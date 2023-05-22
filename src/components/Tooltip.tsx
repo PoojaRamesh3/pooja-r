@@ -14,7 +14,7 @@ const Tooltip = ({ content, position, disabled, children }: ITooltip) => {
           background === "bg-white" ? "bg-black" : "bg-white"
         } ${
           text === "text-white" ? "text-black" : "text-white"
-        } top-0 left-1/2 hover:visible py-2 px-2.5 rounded-md text-sm font-medium invisible text-center min-w-max tooltip${
+        } top-0 left-1/2 hover:visible py-2 px-1 rounded-md text-sm font-medium invisible md:px-2.5 text-center min-w-max tooltip${
           position === tooltipPostitionEnum.Down ? " down" : ""
         }${disabled ? "invisible" : ""}`}
       >

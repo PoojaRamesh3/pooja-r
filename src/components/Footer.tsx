@@ -14,7 +14,7 @@ const Footer = () => {
           background === "bg-white" ? "border-black" : "border-white"
         } ${text} `}
       >
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center flex-wrap">
           <h3 className={`font-semibold pl-5`}>{content.footer.conclusion}</h3>
 
           {content.footer.icons.map((item, index) => (
@@ -35,7 +35,8 @@ const Footer = () => {
             </Tooltip>
           ))}
         </div>
-        <div className={`flex justify-center`}>
+
+        <div className="flex justify-center ">
           {content.footer.socialicons.map((item, index) => (
             <Tooltip
               key={index}

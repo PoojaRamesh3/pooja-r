@@ -31,7 +31,7 @@ const Navbar = () => {
       <div
         className={`flex w-full justify-between p-5 md:p-3 items-center ${background}`}
       >
-        <div className="">
+        <div>
           <Link
             to="/"
             className={`font-black text-2xl font-sans hover:underline hover:decoration-4 ${text}`}
