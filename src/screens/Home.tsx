@@ -10,7 +10,7 @@ const Home = () => {
       <div className={`flex ${background} py-28 items-center justify-center`}>
         <div className={`basis-3/12`}>
           <img
-            // src={content.home.profile}
+            src={content.home.profile}
             alt=""
             style={{ height: "200px", width: "269px" }}
             className={`rounded-2xl w-full border  shadow-slate-300 ${

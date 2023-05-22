@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
+import { BsGithub } from "react-icons/bs";
 import { content } from "../content";
-import { DiVim } from "react-icons/di";
+import Tooltip from "./Tooltip";
+import { tooltipPostitionEnum } from "../config";
 
 const ImageCard = () => {
   const background = useSelector((state: any) => state.theme.background);
@@ -12,24 +14,58 @@ const ImageCard = () => {
     >
       {content.projects.projectslist?.map((item: any, index: any) => {
         return (
-          <div className={`pb-16`} key={index}>
-            <a
-              href={item.prolink}
-              className={``}
-              target="_blank"
-              rel="noreferrer"
+          <div
+            className={`flex pb-16 items-baseline transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110`}
+            key={index}
+          >
+            <div className={``}>
+              <a
+                href={item.prolink}
+                className={``}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={item.proimg}
+                  alt=""
+                  className={`rounded-3xl shadow-slate-300 ${
+                    text === "text-white"
+                      ? "shadow-xl"
+                      : "shadow-2xl border-black border-2"
+                  }`}
+                  style={{ height: "400px" }}
+                />
+              </a>
+            </div>
+            <Tooltip
+              key={index}
+              disabled={false}
+              position={tooltipPostitionEnum.Up}
+              content={"Code Link"}
             >
-              <img
-                src={item.proimg}
-                alt=""
-                className={`shadow-2xl rounded-3xl shadow-slate-300 border ${
+              <div
+                className={`border-2 rounded-xl p-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 basis-1/2 ${
                   text === "text-white"
-                    ? "shadow-xl border-black"
-                    : "shadow-2xl border-white"
+                    ? "bg-white text-black"
+                    : "bg-black text-white"
                 }`}
-                style={{ height: "500px" }}
-              />
-            </a>
+              >
+                <div className={`flex`}>
+                  <a
+                    className="text-xl font-bold pr-3 hover:underline underline-offset-4 decoration-2"
+                    href={item.gitlink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {item.name}
+                  </a>
+                  <BsGithub
+                    style={{ width: "25px", height: "25px" }}
+                    className=""
+                  />
+                </div>
+              </div>
+            </Tooltip>
           </div>
         );
       })}

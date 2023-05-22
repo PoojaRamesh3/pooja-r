@@ -1,6 +1,7 @@
 .tooltipContainer:hover .tooltip {
   visibility: visible;
 }
+
 .tooltip {
   transform: translateX(-50%) translateY(-100%);
 }
