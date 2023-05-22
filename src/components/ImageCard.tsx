@@ -59,6 +59,7 @@ const ImageCard = () => {
                   >
                     {item.name}
                   </a>
+
                   <BsGithub
                     style={{ width: "25px", height: "25px" }}
                     className=""

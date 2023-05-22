@@ -274,11 +274,11 @@ export const content = {
     ],
   },
   experiences: {
-    heading: "Experiences",
+    heading: "Experience",
     sunheading: "",
   },
   contact: {
-    heading: "Get in touch!",
+    heading: "Contact",
     sunheading: "Contact",
   },
   footer: {

@@ -1,13 +1,15 @@
-import Heading from "../components/Heading";
+// import Heading from "../components/Heading";
+import PageNotFound from "../components/PageNotFound";
 import { content } from "../content";
 
 const Experiences = () => {
   return (
     <>
-      <Heading
+      {/* <Heading
         heading={content.experiences.heading}
         subHeading={content.experiences.sunheading}
-      />
+      /> */}
+      <PageNotFound pageName={content.experiences.heading} />
     </>
   );
 };
