@@ -31,6 +31,9 @@ import Sql from "./assets/sql.png";
 import Git from "./assets/git.png";
 import GitHub from "./assets/github.png";
 import Aws from "./assets/aws.png";
+import Project1 from "./assets/project1.PNG";
+import Project2 from "./assets/project2.PNG";
+import Project3 from "./assets/project3.PNG";
 
 export const content = {
   name: "Pooja R",
@@ -249,6 +252,23 @@ export const content = {
     heading: "Projects",
     sunheading:
       "Here is a quick list of some of the projects I have worked on.",
+    projectslist: [
+      {
+        name: "Text Utilizer",
+        proimg: Project1,
+        prolink: "https://poojaramesh3.github.io/text-utilizer-react-app/",
+      },
+      {
+        name: "Naming Suggestions Application",
+        proimg: Project2,
+        prolink: "https://poojaramesh3.github.io/naming-ideas/",
+      },
+      {
+        name: "NewsLetter SignIn",
+        proimg: Project3,
+        prolink: "https://tame-ruby-ladybug-coat.cyclic.app/",
+      },
+    ],
   },
   experiences: {
     heading: "Experiences",
