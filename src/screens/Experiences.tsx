@@ -4,7 +4,10 @@ import { content } from "../content";
 const Experiences = () => {
   return (
     <>
-      <Heading heading={content.experiences.heading} />
+      <Heading
+        heading={content.experiences.heading}
+        subHeading={content.experiences.sunheading}
+      />
     </>
   );
 };

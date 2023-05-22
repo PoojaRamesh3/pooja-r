@@ -5,7 +5,10 @@ import { content } from "../content";
 const Skills = () => {
   return (
     <>
-      <Heading heading={content.skills.heading} />
+      <Heading
+        heading={content.skills.heading}
+        subHeading={content.skills.sunheading}
+      />
       <TabList />
     </>
   );

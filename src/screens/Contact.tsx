@@ -4,7 +4,10 @@ import { content } from "../content";
 const Contact = () => {
   return (
     <>
-      <Heading heading={content.certificates.heading} />
+      <Heading
+        heading={content.contact.heading}
+        subHeading={content.contact.sunheading}
+      />
     </>
   );
 };

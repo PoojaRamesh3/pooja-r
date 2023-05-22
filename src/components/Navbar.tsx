@@ -46,7 +46,7 @@ const Navbar = () => {
                 {content.navbar.map((item, index) => (
                   <li
                     key={index}
-                    className="hover:underline hover:decoration-2"
+                    className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110"
                   >
                     <Link
                       to={item.url}

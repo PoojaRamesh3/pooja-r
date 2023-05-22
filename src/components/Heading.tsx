@@ -9,6 +9,9 @@ const Heading = (props: any) => {
       <h2 className={`text-2xl py-5 font-bold ${text} md:text-6xl font-sans`}>
         {props.heading}
       </h2>
+      {props.subHeading !== "" && (
+        <p className={`${text} py-3 font-medium`}>{props.subHeading}</p>
+      )}
     </div>
   );
 };

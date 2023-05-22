@@ -9,6 +9,7 @@ import {
   SiGmail,
 } from "react-icons/si";
 import { AiFillLinkedin } from "react-icons/ai";
+import Pooja_R from "./assets/Pooja_R.jpg";
 import C from "./assets/c.png";
 import Cpp from "./assets/c++.png";
 import CSharp from "./assets/Csharp.png";
@@ -57,10 +58,15 @@ export const content = {
     },
   ],
   home: {
-    heading: "Home",
+    heading: "Hello, I'm Pooja R!",
+    sunheading:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non purus urna. Etiam vel mauris quis velit euismod suscipit. Maecenas a nisi arcu. Vivamus vestibulum, justo eu ullamcorper mattis, arcu nunc gravida sem, et semper augue metus id eros. Nam condimentum nibh odio. Maecenas quis sem sem. Duis scelerisque ligula in euismod viverra. Proin finibus, dolor eget volutpat cursus, velit orci tempus nunc, et pulvinar velit lectus ac enim. Aenean nec accumsan mi. Aliquam erat volutpat. Nam dignissim erat id suscipit tempor. In tincidunt augue vitae finibus cursus. Integer ut lacus ac augue rutrum bibendum. Vivamus dictum sodales nunc.",
+    profile: Pooja_R,
   },
   skills: {
     heading: "Skills",
+    sunheading:
+      "Some of the tools and technologies that I know and enjoy working with.",
     tabs: [
       {
         tab: "Languages",
@@ -241,12 +247,16 @@ export const content = {
   },
   projects: {
     heading: "Projects",
+    sunheading:
+      "Here is a quick list of some of the projects I have worked on.",
   },
   experiences: {
     heading: "Experiences",
+    sunheading: "",
   },
-  certificates: {
+  contact: {
     heading: "Get in touch!",
+    sunheading: "Contact",
   },
   footer: {
     conclusion: "Built by Pooja R using :",
