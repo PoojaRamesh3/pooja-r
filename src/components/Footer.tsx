@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <>
       <div
-        className={`p-3 border-t-2 flex flex-col md:flex-row justify-between ${
+        className={`p-3 border-t-2 flex flex-col md:flex-row flex-wrap justify-between ${
           background === "bg-white" ? "border-black" : "border-white"
         } ${text} `}
       >
@@ -36,7 +36,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="flex justify-center ">
+        <div className="flex justify-center flex-wrap pt-5 md:pt-0">
           {content.footer.socialicons.map((item, index) => (
             <Tooltip
               key={index}
@@ -45,7 +45,7 @@ const Footer = () => {
               content={item.name}
             >
               <a
-                className={`p-5 cursor-pointer block transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110`}
+                className={`p-2 md:p-5 cursor-pointer block transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110`}
                 href={item.url}
                 target="_blank"
                 rel="noreferrer"

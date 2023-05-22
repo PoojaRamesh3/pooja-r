@@ -8,7 +8,7 @@ const Layout = () => {
 
   return (
     <div className={`${background}`}>
-      <div className={`min-h-screen`}>
+      <div className={`min-h-fit lg:min-h-screen`}>
         <Navbar />
         <Outlet />
       </div>
