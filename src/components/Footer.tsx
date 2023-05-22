@@ -15,7 +15,11 @@ const Footer = () => {
         } ${text} `}
       >
         <div className="flex justify-center items-center flex-wrap">
-          <h3 className={`font-semibold pl-5`}>{content.footer.conclusion}</h3>
+          <h3
+            className={`font-semibold md:pl-5 basis-full md:basis-auto text-center md:text-left pb-4  md:pb-0`}
+          >
+            {content.footer.conclusion}
+          </h3>
 
           {content.footer.icons.map((item, index) => (
             <Tooltip

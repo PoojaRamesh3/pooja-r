@@ -26,7 +26,7 @@ const Home = () => {
           <h1 className="text-xl md:text-2xl lg:text-4xl font-black">
             {content.home.heading}
           </h1>
-          <p className="pt-5 font-medium text-lg lg:text-xl">
+          <p className="pt-5 font-medium text-base md:text-lg">
             {content.home.sunheading}
           </p>
         </div>

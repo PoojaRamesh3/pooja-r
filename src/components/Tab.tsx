@@ -24,11 +24,11 @@ const Tab = (props: any) => {
                 <img src={item.logo} alt="" className="w-14 h-14" />
               </div>
               <div className="flex items-center">
-                <div className="font-bold text-xl font-sans mr-3">
+                <div className="font-bold text-sm md:text-xl font-sans mr-3">
                   {item.language}
                 </div>
                 <div
-                  className={`font-bold text-base text-black font-sans ${item.bgCol} px-2 py-1 rounded-xl`}
+                  className={`font-bold text-sm md:text-base text-black font-sans ${item.bgCol} px-2 py-1 rounded-xl`}
                 >
                   {item.level}
                 </div>

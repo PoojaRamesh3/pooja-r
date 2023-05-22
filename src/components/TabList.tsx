@@ -15,7 +15,7 @@ const TabList = () => {
   return (
     <div className={`text-center p-5 ${background} ${text}`}>
       <ul
-        className={`nav w-4/5 flex justify-between items-center mb-12 mx-auto flex-wrap md:flex-nowrap `}
+        className={`nav w-full md:w-4/5 flex justify-center md:justify-between items-center mb-12 mx-auto flex-wrap md:flex-nowrap `}
       >
         {content.skills.tabs.map((item, index) => (
           <li
@@ -30,11 +30,13 @@ const TabList = () => {
               activeTab === item.tab && text === "text-white"
                 ? "bg-white text-black"
                 : ""
-            } rounded-full w-1/2 p-4 text-center cursor-pointer transition-all font-semibold duration-0 `}
+            } rounded-full w-fit p-4 text-center cursor-pointer transition-all font-semibold duration-0 `}
           >
-            <div className={`flex justify-center `}>
+            <div
+              className={`flex justify-center flex-wrap md:flex-nowrap items-center`}
+            >
               <div className="pr-2">{item.img}</div>
-              <div>{item.tab}</div>
+              <div className="text-sm md:text-base">{item.tab}</div>
             </div>
           </li>
         ))}
