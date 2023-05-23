@@ -20,6 +20,7 @@ import Css from "./assets/css.png";
 import Bootstrap from "./assets/bootstrap.png";
 import Tailwind from "./assets/tailwind.png";
 import React from "./assets/react.png";
+import TypeScript from "./assets/typescript.png";
 import HubSpot from "./assets/hubSpot.png";
 import Sass from "./assets/sass.png";
 import WordPress from "./assets/wordpress.png";
@@ -33,7 +34,7 @@ import GitHub from "./assets/github.png";
 import Aws from "./assets/aws.png";
 import Project1 from "./assets/project1.PNG";
 import Project2 from "./assets/project2.PNG";
-import Project3 from "./assets/project3.PNG";
+// import Project3 from "./assets/project3.PNG";
 import Project4 from "./assets/project4.PNG";
 
 export const content = {
@@ -177,6 +178,13 @@ export const content = {
             level: "Intermediate",
             url: "https://reactjs.org/",
             bgCol: "bg-cyan-100",
+          },
+          {
+            logo: TypeScript,
+            language: "TypeScript",
+            level: "Intermediate",
+            url: "https://www.typescriptlang.org/",
+            bgCol: "bg-blue-300",
           },
           {
             logo: WordPress,
