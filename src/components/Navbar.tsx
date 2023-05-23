@@ -15,6 +15,15 @@ const Navbar = () => {
   const [click, setClick] = useState(false);
   const [theme, setTheme] = useState(initialTheme);
   const [themeIcon, setThemeIcon] = useState(false);
+  const [openSlide, setopenSlide] = useState(true);
+  const catMenu = useRef(null);
+
+  // const closeOpenMenus = (e:any) => {
+  //   if (catMenu.current && openSlide && !catMenu.current.contains(e.target)) {
+  //     setopenSlide(false);
+  //     document.addEventListener("mousedown", closeOpenMenus);
+  //   }
+  // };
 
   const themeUpdater = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
@@ -114,7 +123,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className={`bg-gray-400 md:hidden ${background}`}>
-        {click === true && <Hamburger textColor={text} />}
+        {click === true && <Hamburger textColor={text} close={setClick} />}
       </div>
     </nav>
   );

@@ -5,7 +5,13 @@ const Hamburger = (props: any) => {
   return (
     <ul className="flex-col flex items-center pb-5 flex-wrap">
       {content.navbar.map((item, index) => (
-        <li className="py-2 w-full text-center" key={index}>
+        <li
+          className="py-2 w-full text-center"
+          key={index}
+          onClick={() => {
+            props.close(false);
+          }}
+        >
           <Link
             to={item.url}
             className={`font-semibold hover:underline hover:decoration-2 ${props.textColor}`}
