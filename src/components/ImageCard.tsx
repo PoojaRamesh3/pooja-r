@@ -31,7 +31,7 @@ const ImageCard = () => {
                   alt=""
                   className={`h-auto md:h-96 rounded-3xl shadow-slate-300 proj-img ${
                     text === "text-white"
-                      ? "shadow-xl"
+                      ? "shadow-md border-white"
                       : "shadow-2xl border-black border-2"
                   }`}
                 />
@@ -60,10 +60,7 @@ const ImageCard = () => {
                     {item.name}
                   </a>
 
-                  <BsGithub
-                    // style={{ width: "25px", height: "25px" }}
-                    className="w-5 h-5 md:w-6 md:h-6"
-                  />
+                  <BsGithub className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
               </div>
             </Tooltip>
