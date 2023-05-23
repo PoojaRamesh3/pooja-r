@@ -34,7 +34,7 @@ const Layout = () => {
       {scrollTop && (
         <BiUpArrowAlt
           onClick={bottomToTop}
-          className={`cursor-pointer fixed border-2 right-6 bottom-6 z-10 rounded-full ${
+          className={`cursor-pointer fixed border right-6 bottom-6 z-10 rounded-full ${
             background === "bg-white"
               ? "hover:bg-black hover:text-white hover:border-white border-black bg-white text-black"
               : "hover:bg-white hover:text-black hover:border-black border-white bg-black text-white"
