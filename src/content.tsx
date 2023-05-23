@@ -229,7 +229,7 @@ export const content = {
           },
           {
             logo: MangoDB,
-            language: "MangoDB",
+            language: "MongoDB",
             level: "Beginner",
             url: "https://www.mongodb.com/",
             bgCol: "bg-green-300",

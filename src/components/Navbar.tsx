@@ -1,6 +1,6 @@
 import { CgMenu, CgClose } from "react-icons/cg";
 import { FaSun, FaMoon } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateTheme } from "../redux/action";
 import { content } from "../content";
