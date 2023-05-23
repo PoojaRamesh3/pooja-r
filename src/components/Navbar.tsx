@@ -15,11 +15,16 @@ const Navbar = () => {
   const [click, setClick] = useState(false);
   const [theme, setTheme] = useState(initialTheme);
   const [themeIcon, setThemeIcon] = useState(false);
+  const [activeTab, setActiveTab] = useState(content.navbar[0]);
 
   const themeUpdater = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
     dispatch(updateTheme(theme));
     setThemeIcon(!themeIcon);
+  };
+
+  const handleTab = (tabs: any) => {
+    setActiveTab(tabs);
   };
 
   return (
@@ -45,12 +50,22 @@ const Navbar = () => {
               <ul className="list-none flex w-full justify-between">
                 {content.navbar.map((item, index) => (
                   <li
+                    onClick={() => handleTab(item)}
                     key={index}
                     className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110"
                   >
                     <Link
                       to={item.url}
-                      className={`p-5 font-bold text-base font-sans ${text}`}
+                      className={`${
+                        activeTab === item && background === "bg-white"
+                          ? "bg-black text-white rounded-full"
+                          : ""
+                      }
+            ${
+              activeTab === item && text === "text-white"
+                ? "bg-white text-black"
+                : ""
+            } p-5 font-bold text-base font-sans ${text}`}
                     >
                       {item.listname}
                     </Link>
