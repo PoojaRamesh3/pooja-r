@@ -16,7 +16,7 @@ const ImageCard = () => {
       {content.projects.projectslist?.map((item: any, index: any) => {
         return (
           <div
-            className={`flex flex-wrap pb-16 items-baseline transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 justify-center`}
+            className={`flex flex-wrap pb-16 items-baseline transition ease-in-out delay-150 md:hover:-translate-y-1 md:hover:scale-110 justify-center`}
             key={index}
           >
             <div className={`cursor-pointer`}>
