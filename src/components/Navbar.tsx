@@ -1,6 +1,6 @@
 import { CgMenu, CgClose } from "react-icons/cg";
 import { FaSun, FaMoon } from "react-icons/fa";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateTheme } from "../redux/action";
 import { content } from "../content";
@@ -15,15 +15,6 @@ const Navbar = () => {
   const [click, setClick] = useState(false);
   const [theme, setTheme] = useState(initialTheme);
   const [themeIcon, setThemeIcon] = useState(false);
-  const [openSlide, setopenSlide] = useState(true);
-  const catMenu = useRef(null);
-
-  // const closeOpenMenus = (e:any) => {
-  //   if (catMenu.current && openSlide && !catMenu.current.contains(e.target)) {
-  //     setopenSlide(false);
-  //     document.addEventListener("mousedown", closeOpenMenus);
-  //   }
-  // };
 
   const themeUpdater = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
@@ -33,7 +24,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`border-b-2 fixed top-0 right-0 w-full z-10 ${
+      className={`md:border-b-2 fixed top-0 right-0 w-full z-10 ${
         background === "bg-white" ? "border-black" : "border-white"
       } ${text}`}
     >
