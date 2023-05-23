@@ -34,7 +34,7 @@ import GitHub from "./assets/github.png";
 import Aws from "./assets/aws.png";
 import Project1 from "./assets/project1.PNG";
 import Project2 from "./assets/project2.PNG";
-import Project4 from "./assets/project4.PNG";
+import Project3 from "./assets/project3.PNG";
 
 export const content = {
   name: "Pooja R",
@@ -290,14 +290,9 @@ export const content = {
         prolink: "https://poojaramesh3.github.io/naming-ideas/",
         gitlink: "https://github.com/PoojaRamesh3/naming-ideas",
       },
-      // {
-      //   name: "My Website",
-      //   proimg: Project3,
-      //   gitlink: "https://github.com/PoojaRamesh3/pooja-r",
-      // },
       {
         name: "NewsLetter SignIn",
-        proimg: Project4,
+        proimg: Project3,
         prolink: "https://tame-ruby-ladybug-coat.cyclic.app/",
         gitlink: "https://github.com/PoojaRamesh3/News-Letter-SignUp",
       },
