@@ -23,8 +23,8 @@ const Navbar = () => {
     setThemeIcon(!themeIcon);
   };
 
-  const handleTab = (tabs: any) => {
-    setActiveTab(tabs);
+  const handleTab = (navlink: any) => {
+    setActiveTab(navlink);
   };
 
   return (
@@ -38,10 +38,11 @@ const Navbar = () => {
       >
         <div>
           <Link
+            onClick={() => handleTab(content.navbar[0])}
             to="/"
             className={`font-black text-2xl font-sans hover:underline hover:decoration-4 ${text}`}
           >
-            {content.name}
+            {content.brandname}
           </Link>
         </div>
         <div className="hidden md:block">

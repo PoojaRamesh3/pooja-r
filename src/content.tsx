@@ -37,7 +37,7 @@ import Project2 from "./assets/project2.PNG";
 import Project3 from "./assets/project3.PNG";
 
 export const content = {
-  name: "Pooja R",
+  brandname: "Pooja R",
   navbar: [
     {
       listname: "Home",
