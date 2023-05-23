@@ -34,7 +34,6 @@ import GitHub from "./assets/github.png";
 import Aws from "./assets/aws.png";
 import Project1 from "./assets/project1.PNG";
 import Project2 from "./assets/project2.PNG";
-// import Project3 from "./assets/project3.PNG";
 import Project4 from "./assets/project4.PNG";
 
 export const content = {
