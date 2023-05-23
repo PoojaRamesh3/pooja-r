@@ -6,7 +6,7 @@ const Home = () => {
   const text = useSelector((state: any) => state.theme.text);
 
   return (
-    <div className="mt-20">
+    <div className="mt-16 md:mt-20">
       <div
         className={`lg:flex ${background} px-5 lg:px-0 py-5 md:py-10 lg:py-28 items-center justify-center flex-wrap block text-center lg:text-left lg:justify-evenly`}
       >
