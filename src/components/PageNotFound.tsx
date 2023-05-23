@@ -5,7 +5,7 @@ const PageNotFound = (props: any) => {
   const text = useSelector((state: any) => state.theme.text);
 
   return (
-    <div className="mt-20 text-center">
+    <div className="mt-16 md:mt-20 text-center">
       <h2 className="pt-16 font-black text-xl md:text-4xl text-red-600 p-3">
         {props.pageName} page is currently under construction!
       </h2>
