@@ -283,11 +283,11 @@ export const content = {
         prolink: "https://poojaramesh3.github.io/naming-ideas/",
         gitlink: "https://github.com/PoojaRamesh3/naming-ideas",
       },
-      {
-        name: "My Website",
-        proimg: Project3,
-        gitlink: "https://github.com/PoojaRamesh3/pooja-r",
-      },
+      // {
+      //   name: "My Website",
+      //   proimg: Project3,
+      //   gitlink: "https://github.com/PoojaRamesh3/pooja-r",
+      // },
       {
         name: "NewsLetter SignIn",
         proimg: Project4,
