@@ -16,8 +16,8 @@ const Home = () => {
           <img
             src={content.home.profile}
             alt="Pooja R"
-            style={{ height: "200px", width: "269px" }}
-            className={`rounded-2xl w-full border  shadow-slate-300 ${
+            style={{}}
+            className={`rounded-2xl border w-64 h-64 md:w-auto shadow-slate-300 ${
               text === "text-white" ? "shadow-md" : "shadow-2xl"
             }`}
           />
@@ -26,9 +26,13 @@ const Home = () => {
           <h1 className="text-xl md:text-2xl lg:text-4xl font-black">
             {content.home.heading}
           </h1>
-          <p className="pt-5 font-medium text-base md:text-lg">
-            {content.home.sunheading}
-          </p>
+          {content.home.paragraph.map((item: any, index: any) => {
+            return (
+              <p key={index} className="pt-5 font-medium text-base md:text-lg">
+                {item.content}
+              </p>
+            );
+          })}
         </div>
       </div>
     </div>

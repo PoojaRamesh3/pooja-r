@@ -34,6 +34,7 @@ import Aws from "./assets/aws.png";
 import Project1 from "./assets/project1.PNG";
 import Project2 from "./assets/project2.PNG";
 import Project3 from "./assets/project3.PNG";
+import Project4 from "./assets/project4.PNG";
 
 export const content = {
   name: "Pooja R",
@@ -62,8 +63,25 @@ export const content = {
   ],
   home: {
     heading: "Hello, I'm Pooja R!",
-    sunheading:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non purus urna. Etiam vel mauris quis velit euismod suscipit. Maecenas a nisi arcu. Vivamus vestibulum, justo eu ullamcorper mattis, arcu nunc gravida sem, et semper augue metus id eros. Nam condimentum nibh odio. Maecenas quis sem sem. Duis scelerisque ligula in euismod viverra. Proin finibus, dolor eget volutpat cursus, velit orci tempus nunc, et pulvinar velit lectus ac enim. Aenean nec accumsan mi. Aliquam erat volutpat. Nam dignissim erat id suscipit tempor. In tincidunt augue vitae finibus cursus. Integer ut lacus ac augue rutrum bibendum. Vivamus dictum sodales nunc.",
+    paragraph: [
+      {
+        content:
+          "A software developer with two years of professional experience in the industry. My passion for technology and problem-solving has driven me to excel in various aspects of software development.",
+      },
+      {
+        content:
+          "Over the past two years, I have honed my skills in full-stack web development, working with both front-end and back-end technologies.",
+      },
+      {
+        content:
+          "I am passionate about staying up-to-date with the latest trends in the software development field and continuously improving my skills. I am a proactive problem-solver.",
+      },
+      {
+        content:
+          "Here, you can find my personal projects, technologies I like working with or the skills I own...",
+      },
+    ],
+
     profile: Pooja_R,
   },
   skills: {
@@ -266,8 +284,13 @@ export const content = {
         gitlink: "https://github.com/PoojaRamesh3/naming-ideas",
       },
       {
-        name: "NewsLetter SignIn",
+        name: "My Website",
         proimg: Project3,
+        gitlink: "https://github.com/PoojaRamesh3/pooja-r",
+      },
+      {
+        name: "NewsLetter SignIn",
+        proimg: Project4,
         prolink: "https://tame-ruby-ladybug-coat.cyclic.app/",
         gitlink: "https://github.com/PoojaRamesh3/News-Letter-SignUp",
       },
@@ -282,7 +305,7 @@ export const content = {
     sunheading: "Contact",
   },
   footer: {
-    conclusion: "Built by Pooja R using :",
+    conclusion: "Developed by Pooja R using :",
     icons: [
       {
         icon: <RiReactjsLine style={{ width: "25px", height: "25px" }} />,

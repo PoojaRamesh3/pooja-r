@@ -18,7 +18,7 @@ const ImageCard = () => {
             className={`flex pb-16 items-baseline transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110`}
             key={index}
           >
-            <div className={``}>
+            <div className={`cursor-pointer`}>
               <a
                 href={item.prolink}
                 className={``}
