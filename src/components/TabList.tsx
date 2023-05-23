@@ -15,7 +15,7 @@ const TabList = () => {
   return (
     <div className={`text-center p-5 ${background} ${text}`}>
       <ul
-        className={`nav w-full md:w-4/5 flex justify-center md:justify-between items-center mb-12 mx-auto flex-wrap md:flex-nowrap `}
+        className={`list-none nav w-full md:w-4/5 flex justify-center md:justify-between items-center mb-12 mx-auto flex-wrap md:flex-nowrap `}
       >
         {content.skills.tabs.map((item, index) => (
           <li

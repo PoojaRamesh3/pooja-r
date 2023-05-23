@@ -51,7 +51,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <div className="flex items-center">
             <div className="p-5">
-              <ul className="flex w-full justify-between">
+              <ul className="list-none flex w-full justify-between">
                 {content.navbar.map((item, index) => (
                   <li
                     key={index}
