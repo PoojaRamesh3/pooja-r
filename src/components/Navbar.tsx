@@ -66,7 +66,7 @@ const Navbar = () => {
               activeTab === item && text === "text-white"
                 ? "bg-white text-black rounded-full"
                 : ""
-            } p-5 font-bold text-base font-sans`}
+            } p-4 font-bold text-base font-sans`}
                     >
                       {item.listname}
                     </Link>
