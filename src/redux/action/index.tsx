@@ -4,7 +4,7 @@ export function updateTheme(theme: string) {
   let updateObj;
   if (theme === "dark") {
     updateObj = {
-      background: "bg-gray-900",
+      background: "bg-black",
       text: "text-white",
     };
   } else {

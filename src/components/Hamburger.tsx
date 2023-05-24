@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Hamburger = (props: any) => {
   const background = useSelector((state: any) => state.theme.background);
+
   return (
     <ul
       className={`list-none flex-col flex items-center pb-5 flex-wrap border-b-2 ${

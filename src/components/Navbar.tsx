@@ -129,7 +129,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className={`bg-gray-400 md:hidden ${background}`}>
+      <div className={`bg-black md:hidden ${background}`}>
         {click === true && <Hamburger textColor={text} close={setClick} />}
       </div>
     </nav>
