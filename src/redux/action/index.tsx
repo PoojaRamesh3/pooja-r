@@ -1,4 +1,5 @@
 export const THEMECHANGER = "THEMECHANGER";
+export const UPDATETAB = "UPDATETAB";
 
 export function updateTheme(theme: string) {
   let updateObj;
@@ -17,5 +18,12 @@ export function updateTheme(theme: string) {
   return {
     type: THEMECHANGER,
     payload: updateObj,
+  };
+}
+
+export function updateTab(tab: string) {
+  return {
+    type: UPDATETAB,
+    payload: tab,
   };
 }
