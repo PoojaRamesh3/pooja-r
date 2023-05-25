@@ -13,7 +13,7 @@ const Hamburger = (props: any) => {
     >
       {content.navbar.map((item, index) => (
         <li
-          className="py-2 w-full text-center"
+          className="py-3 w-full text-center"
           key={index}
           onClick={() => {
             props.close(false);
