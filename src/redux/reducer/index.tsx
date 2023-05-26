@@ -1,4 +1,4 @@
-import { THEMECHANGER, UPDATETAB } from "../action";
+import { THEMECHANGER, UPDATETAB, UPDATETABICON } from "../action";
 
 export interface theme {
   initialTheme: string;
@@ -7,6 +7,7 @@ export interface theme {
     background: string;
     text: string;
   };
+  themeIcon: boolean;
 }
 
 const initialState: theme = {
@@ -16,6 +17,7 @@ const initialState: theme = {
     background: "bg-white",
     text: "text-black",
   },
+  themeIcon: true,
 };
 
 const Reducer = (state = initialState, action: any) => {
@@ -24,6 +26,8 @@ const Reducer = (state = initialState, action: any) => {
       return { ...state, theme: action.payload };
     case UPDATETAB:
       return { ...state, activeTab: action.payload };
+    case UPDATETABICON:
+      return { ...state, themeIcon: action.payload };
     default:
       return state;
   }

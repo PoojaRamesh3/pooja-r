@@ -1,5 +1,6 @@
 export const THEMECHANGER = "THEMECHANGER";
 export const UPDATETAB = "UPDATETAB";
+export const UPDATETABICON = "UPDATETABICON";
 
 export function updateTheme(theme: string) {
   let updateObj;
@@ -18,6 +19,13 @@ export function updateTheme(theme: string) {
   return {
     type: THEMECHANGER,
     payload: updateObj,
+  };
+}
+
+export function updateThemeIcon(themeicon: boolean) {
+  return {
+    type: UPDATETABICON,
+    payload: themeicon,
   };
 }
 

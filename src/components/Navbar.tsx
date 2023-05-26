@@ -1,8 +1,8 @@
 import { CgMenu, CgClose } from "react-icons/cg";
 import { FaSun, FaMoon } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updateTab, updateTheme } from "../redux/action";
+import { updateTab, updateTheme, updateThemeIcon } from "../redux/action";
 import { content } from "../content";
 import { Link } from "react-router-dom";
 import Hamburger from "./Hamburger";
@@ -12,15 +12,23 @@ const Navbar = () => {
   const background = useSelector((state: any) => state.theme.background);
   const text = useSelector((state: any) => state.theme.text);
   const initialTheme = useSelector((state: any) => state.initialTheme);
+  const initialThemeIcon = useSelector((state: any) => state.themeIcon);
   const activeTab = useSelector((state: any) => state.activeTab);
   const [click, setClick] = useState(false);
   const [theme, setTheme] = useState(initialTheme);
-  const [themeIcon, setThemeIcon] = useState(false);
+
+  useEffect(() => {
+    if (initialTheme === "light") {
+      dispatch(updateThemeIcon(true));
+    } else {
+      dispatch(updateThemeIcon(false));
+    }
+  }, []);
 
   const themeUpdater = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
     dispatch(updateTheme(theme));
-    setThemeIcon(!themeIcon);
+    dispatch(updateThemeIcon(!initialThemeIcon));
   };
 
   const handleTab = (navlink: any) => {
@@ -75,7 +83,7 @@ const Navbar = () => {
               </ul>
             </div>
             <div>
-              {themeIcon === true ? (
+              {initialThemeIcon === true ? (
                 <FaSun
                   onClick={themeUpdater}
                   className={`cursor-pointer ${text}`}
@@ -94,7 +102,7 @@ const Navbar = () => {
 
         <div className="flex items-center md:hidden">
           <div className="px-3">
-            {themeIcon === true ? (
+            {initialThemeIcon === true ? (
               <FaSun
                 onClick={themeUpdater}
                 className={`cursor-pointer ${text}`}
