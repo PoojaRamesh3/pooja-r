@@ -23,6 +23,9 @@ const Navbar = () => {
     } else {
       dispatch(updateThemeIcon(false));
     }
+    if (activeTab === "/") {
+      dispatch(updateTab(content.navbar[0].listname));
+    }
   }, []);
 
   const themeUpdater = () => {
