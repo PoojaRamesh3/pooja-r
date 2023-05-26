@@ -1,8 +1,8 @@
 import { CgMenu, CgClose } from "react-icons/cg";
 import { FaSun, FaMoon } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updateTab, updateTheme, updateThemeIcon } from "../redux/action";
+import { updateTheme } from "../redux/action";
 import { content } from "../content";
 import { Link } from "react-router-dom";
 import Hamburger from "./Hamburger";
@@ -12,30 +12,19 @@ const Navbar = () => {
   const background = useSelector((state: any) => state.theme.background);
   const text = useSelector((state: any) => state.theme.text);
   const initialTheme = useSelector((state: any) => state.initialTheme);
-  const initialThemeIcon = useSelector((state: any) => state.themeIcon);
-  const activeTab = useSelector((state: any) => state.activeTab);
   const [click, setClick] = useState(false);
   const [theme, setTheme] = useState(initialTheme);
-
-  useEffect(() => {
-    if (initialTheme === "light") {
-      dispatch(updateThemeIcon(true));
-    } else {
-      dispatch(updateThemeIcon(false));
-    }
-    if (activeTab === "/") {
-      dispatch(updateTab(content.navbar[0].listname));
-    }
-  }, []);
+  const [themeIcon, setThemeIcon] = useState(false);
+  const [activeTab, setActiveTab] = useState(content.navbar[0]);
 
   const themeUpdater = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
     dispatch(updateTheme(theme));
-    dispatch(updateThemeIcon(!initialThemeIcon));
+    setThemeIcon(!themeIcon);
   };
 
   const handleTab = (navlink: any) => {
-    dispatch(updateTab(navlink.listname));
+    setActiveTab(navlink);
   };
 
   return (
@@ -69,12 +58,12 @@ const Navbar = () => {
                     <Link
                       to={item.url}
                       className={`${
-                        activeTab === item.listname && background === "bg-white"
+                        activeTab === item && background === "bg-white"
                           ? "bg-black text-white rounded-full"
                           : ""
                       }
             ${
-              activeTab === item.listname && text === "text-white"
+              activeTab === item && text === "text-white"
                 ? "bg-white text-black rounded-full"
                 : ""
             } p-4 font-bold text-base font-sans`}
@@ -86,7 +75,7 @@ const Navbar = () => {
               </ul>
             </div>
             <div>
-              {initialThemeIcon === true ? (
+              {themeIcon === true ? (
                 <FaSun
                   onClick={themeUpdater}
                   className={`cursor-pointer ${text}`}
@@ -103,9 +92,11 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* MOBILE MENU */}
         <div className="flex items-center md:hidden">
+          {/* MOBILE THEME BUTTON */}
           <div className="px-3">
-            {initialThemeIcon === true ? (
+            {themeIcon === true ? (
               <FaSun
                 onClick={themeUpdater}
                 className={`cursor-pointer ${text}`}
@@ -119,6 +110,8 @@ const Navbar = () => {
               />
             )}
           </div>
+
+          {/* MOBILE HAMBURGER AND CLOSE BUTTON */}
           <div className="md:hidden">
             {click === true ? (
               <CgClose
@@ -140,6 +133,8 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      {/* MOBILE HAMBURGER MENU */}
       <div className={`bg-black md:hidden ${background}`}>
         {click === true && <Hamburger textColor={text} close={setClick} />}
       </div>
