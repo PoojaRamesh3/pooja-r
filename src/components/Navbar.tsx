@@ -16,8 +16,8 @@ const Navbar = () => {
   const [click, setClick] = useState(false);
 
   useEffect(() => {
-    let currentLocation = window.location.href.split("/");
-    let endPoint = currentLocation[currentLocation.length - 1];
+    const currentLocation = window.location.href.split("/");
+    const endPoint = currentLocation[currentLocation.length - 1];
     if (endPoint === "") {
       dispatch(updateTab("Home"));
     }
