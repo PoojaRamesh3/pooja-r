@@ -99,7 +99,7 @@ const Navbar = () => {
         <div className="flex items-center md:hidden">
           {/* MOBILE THEME BUTTON */}
           <div className="px-3">
-            {initialTheme === "light" ? (
+            {initialTheme !== "light" ? (
               <FaSun
                 onClick={() => changeFunction()}
                 className={`cursor-pointer ${text}`}
