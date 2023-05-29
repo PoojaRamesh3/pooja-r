@@ -8,7 +8,7 @@ const TabList = () => {
   const initialTheme = useSelector((state: any) => state.theme);
   const background = useSelector((state: any) => state.color.background);
   const text = useSelector((state: any) => state.color.textcolor);
-  console.log(activeTab);
+
   const handleTab = (tabs: any) => {
     setActiveTab(tabs);
   };
