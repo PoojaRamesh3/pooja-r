@@ -2,7 +2,7 @@ import { CgMenu, CgClose } from "react-icons/cg";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updateColor, updateTheme } from "../redux/action";
+import { updateColor, updateTheme, updateTab } from "../redux/action";
 import { content } from "../content";
 import { Link } from "react-router-dom";
 import Hamburger from "./Hamburger";
@@ -12,9 +12,8 @@ const Navbar = () => {
   const initialTheme = useSelector((state: any) => state.theme);
   const background = useSelector((state: any) => state.color.background);
   const text = useSelector((state: any) => state.color.textcolor);
-
+  const activeTab = useSelector((state: any) => state.activeTab);
   const [click, setClick] = useState(false);
-  const [activeTab, setActiveTab] = useState(content.navbar[0]);
 
   const changeFunction = () => {
     if (initialTheme === "light") {
@@ -27,7 +26,7 @@ const Navbar = () => {
   };
 
   const handleTab = (navlink: any) => {
-    setActiveTab(navlink);
+    dispatch(updateTab(navlink.listname));
   };
 
   return (
@@ -61,12 +60,12 @@ const Navbar = () => {
                     <Link
                       to={item.url}
                       className={`${
-                        activeTab === item && initialTheme === "light"
+                        activeTab === item.listname && initialTheme === "light"
                           ? "bg-black text-white rounded-full"
                           : ""
                       }
             ${
-              activeTab === item && initialTheme === "dark"
+              activeTab === item.listname && initialTheme === "dark"
                 ? "bg-white text-black rounded-full"
                 : ""
             } p-4 font-bold text-base font-sans`}
