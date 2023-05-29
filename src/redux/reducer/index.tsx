@@ -1,27 +1,21 @@
-import { THEMECHANGER } from "../action";
+import { UPDATE_THEME, UPDATE_COLOR } from "../action";
 
-export interface theme {
-  initialTheme: string;
-  theme: {
-    background: string;
-    text: string;
-  };
-}
-
-const initialState: theme = {
-  initialTheme: "dark",
-  theme: {
+const initialState = {
+  theme: "light",
+  color: {
     background: "bg-white",
-    text: "text-black",
+    textcolor: "text-black",
   },
 };
 
-const Reducer = (state = initialState, action: any) => {
+const reducer = (state = initialState, action: any) => {
   switch (action.type) {
-    case THEMECHANGER:
+    case UPDATE_COLOR:
+      return { ...state, color: action.payload };
+    case UPDATE_THEME:
       return { ...state, theme: action.payload };
     default:
       return state;
   }
 };
-export default Reducer;
+export default reducer;

@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 
 const Heading = (props: any) => {
-  const background = useSelector((state: any) => state.theme.background);
-  const text = useSelector((state: any) => state.theme.text);
+  const background = useSelector((state: any) => state.color.background);
+  const text = useSelector((state: any) => state.color.textcolor);
 
   return (
     <div className={`p-5 text-center ${background} mt-16 md:mt-20`}>

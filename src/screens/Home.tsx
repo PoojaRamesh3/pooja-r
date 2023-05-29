@@ -2,8 +2,9 @@ import { content } from "../content";
 import { useSelector } from "react-redux";
 
 const Home = () => {
-  const background = useSelector((state: any) => state.theme.background);
-  const text = useSelector((state: any) => state.theme.text);
+  const initialTheme = useSelector((state: any) => state.theme);
+  const background = useSelector((state: any) => state.color.background);
+  const text = useSelector((state: any) => state.color.textcolor);
 
   return (
     <div className="mt-16 md:mt-20">
@@ -18,7 +19,7 @@ const Home = () => {
             alt="Pooja R"
             style={{}}
             className={`rounded-2xl border w-64 h-64 md:w-auto shadow-slate-300 ${
-              text === "text-white" ? "shadow-md" : "shadow-2xl"
+              initialTheme === "light" ? "shadow-2xl" : "shadow-md "
             }`}
           />
         </div>

@@ -6,7 +6,10 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 const Layout = () => {
-  const background = useSelector((state: any) => state.theme.background);
+  const initialTheme = useSelector((state: any) => state.theme);
+  const background = useSelector((state: any) => state.color.background);
+  const text = useSelector((state: any) => state.color.textcolor);
+
   const [scrollTop, setScrollTop] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -26,7 +29,7 @@ const Layout = () => {
   };
 
   return (
-    <div className={`${background}`}>
+    <div className={`${background} ${text}`}>
       <div className={`min-h-fit lg:min-h-screen`}>
         <Navbar />
         <Outlet />
@@ -35,7 +38,7 @@ const Layout = () => {
         <BiUpArrowAlt
           onClick={bottomToTop}
           className={`cursor-pointer fixed border right-6 bottom-6 z-10 rounded-full ${
-            background === "bg-white"
+            initialTheme === "light"
               ? "hover:bg-black hover:text-white hover:border-white border-black bg-white text-black"
               : "hover:bg-white hover:text-black hover:border-black border-white bg-black text-white"
           }`}

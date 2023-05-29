@@ -1,21 +1,28 @@
-export const THEMECHANGER = "THEMECHANGER";
+export const UPDATE_THEME = "UPDATETHEME";
+export const UPDATE_COLOR = "UPDATE_COLOR";
 
-export function updateTheme(theme: string) {
-  let updateObj;
-  if (theme === "dark") {
-    updateObj = {
-      background: "bg-black",
-      text: "text-white",
+export function updateColor(color: string) {
+  let obj = {};
+  if (color === "light") {
+    obj = {
+      background: "bg-white",
+      textcolor: "text-black",
     };
   } else {
-    updateObj = {
-      background: "bg-white",
-      text: "text-black",
+    obj = {
+      background: "bg-black",
+      textcolor: "text-white",
     };
   }
-
   return {
-    type: THEMECHANGER,
-    payload: updateObj,
+    type: UPDATE_COLOR,
+    payload: obj,
+  };
+}
+
+export function updateTheme(theme: any) {
+  return {
+    type: UPDATE_THEME,
+    payload: theme,
   };
 }

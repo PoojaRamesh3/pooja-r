@@ -6,8 +6,8 @@ import { tooltipPostitionEnum } from "../config";
 import "../styles/ImageCard.css";
 
 const ImageCard = () => {
-  const background = useSelector((state: any) => state.theme.background);
-  const text = useSelector((state: any) => state.theme.text);
+  const initialTheme = useSelector((state: any) => state.theme);
+  const background = useSelector((state: any) => state.color.background);
 
   return (
     <div
@@ -30,9 +30,9 @@ const ImageCard = () => {
                   src={item.proimg}
                   alt=""
                   className={`h-auto md:h-96 rounded-3xl shadow-slate-300 proj-img ${
-                    text === "text-white"
-                      ? "shadow-md border-white"
-                      : "shadow-2xl border-black border-2"
+                    initialTheme === "light"
+                      ? "shadow-2xl border-black border-2"
+                      : "shadow-md border-white "
                   }`}
                 />
               </a>
@@ -45,9 +45,9 @@ const ImageCard = () => {
             >
               <div
                 className={`border-2 rounded-xl py-2 px-3 md:p-4 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 basis-1/2 ${
-                  text === "text-white"
-                    ? "bg-white text-black"
-                    : "bg-black text-white"
+                  initialTheme === "light"
+                    ? "bg-black text-white"
+                    : "bg-white text-black"
                 }`}
               >
                 <div className={`flex flex-wrap items-center`}>

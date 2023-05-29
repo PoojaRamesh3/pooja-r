@@ -3,7 +3,7 @@ import { content } from "../content";
 import { Link } from "react-router-dom";
 
 const Hamburger = (props: any) => {
-  const background = useSelector((state: any) => state.theme.background);
+  const background = useSelector((state: any) => state.color.background);
 
   return (
     <ul

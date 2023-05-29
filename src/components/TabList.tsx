@@ -5,8 +5,9 @@ import { content } from "../content";
 
 const TabList = () => {
   const [activeTab, setActiveTab] = useState(content.skills.tabs[0].tab);
-  const background = useSelector((state: any) => state.theme.background);
-  const text = useSelector((state: any) => state.theme.text);
+  const initialTheme = useSelector((state: any) => state.theme);
+  const background = useSelector((state: any) => state.color.background);
+  const text = useSelector((state: any) => state.color.textcolor);
 
   const handleTab = (tabs: any) => {
     setActiveTab(tabs);
@@ -22,12 +23,12 @@ const TabList = () => {
             onClick={() => handleTab(item.tab)}
             key={index}
             className={`${
-              activeTab === item.tab && background === "bg-white"
+              activeTab === item.tab && initialTheme === "light"
                 ? "bg-black text-white"
                 : ""
             }
             ${
-              activeTab === item.tab && text === "text-white"
+              activeTab === item.tab && initialTheme === "dark"
                 ? "bg-white text-black"
                 : ""
             } rounded-full w-fit p-4 text-center cursor-pointer transition-all font-semibold duration-0 `}

@@ -2,7 +2,7 @@ import PageNotFoundImg from "../assets/404.gif";
 import { useSelector } from "react-redux";
 
 const PageNotFound = (props: any) => {
-  const text = useSelector((state: any) => state.theme.text);
+  const text = useSelector((state: any) => state.color.textcolor);
 
   return (
     <div className="mt-16 md:mt-20 text-center">

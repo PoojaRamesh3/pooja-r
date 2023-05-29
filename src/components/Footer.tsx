@@ -4,15 +4,16 @@ import Tooltip from "./Tooltip";
 import { tooltipPostitionEnum } from "../config";
 
 const Footer = () => {
-  const background = useSelector((state: any) => state.theme.background);
-  const text = useSelector((state: any) => state.theme.text);
+  const initialTheme = useSelector((state: any) => state.theme);
+  const background = useSelector((state: any) => state.color.background);
+  const text = useSelector((state: any) => state.color.textcolor);
 
   return (
     <>
       <div
         className={`p-3 border-t-2 flex flex-col md:flex-row flex-wrap justify-between ${
-          background === "bg-white" ? "border-black" : "border-white"
-        } ${text} `}
+          initialTheme === "light" ? "border-black" : "border-white"
+        } ${text} ${background}`}
       >
         <div className="flex justify-center items-center flex-wrap">
           <h3

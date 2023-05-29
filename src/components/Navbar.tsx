@@ -2,25 +2,28 @@ import { CgMenu, CgClose } from "react-icons/cg";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updateTheme } from "../redux/action";
+import { updateColor, updateTheme } from "../redux/action";
 import { content } from "../content";
 import { Link } from "react-router-dom";
 import Hamburger from "./Hamburger";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const background = useSelector((state: any) => state.theme.background);
-  const text = useSelector((state: any) => state.theme.text);
-  const initialTheme = useSelector((state: any) => state.initialTheme);
+  const initialTheme = useSelector((state: any) => state.theme);
+  const background = useSelector((state: any) => state.color.background);
+  const text = useSelector((state: any) => state.color.textcolor);
+
   const [click, setClick] = useState(false);
-  const [theme, setTheme] = useState(initialTheme);
-  const [themeIcon, setThemeIcon] = useState(false);
   const [activeTab, setActiveTab] = useState(content.navbar[0]);
 
-  const themeUpdater = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
-    dispatch(updateTheme(theme));
-    setThemeIcon(!themeIcon);
+  const changeFunction = () => {
+    if (initialTheme === "light") {
+      dispatch(updateColor("dark"));
+      dispatch(updateTheme("dark"));
+    } else {
+      dispatch(updateColor("light"));
+      dispatch(updateTheme("light"));
+    }
   };
 
   const handleTab = (navlink: any) => {
@@ -30,7 +33,7 @@ const Navbar = () => {
   return (
     <nav
       className={`md:border-b-2 fixed top-0 right-0 w-full z-10 ${
-        background === "bg-white" ? "border-black" : "border-white"
+        initialTheme === "light" ? "border-black" : "border-white"
       } ${text}`}
     >
       <div
@@ -58,12 +61,12 @@ const Navbar = () => {
                     <Link
                       to={item.url}
                       className={`${
-                        activeTab === item && background === "bg-white"
+                        activeTab === item && initialTheme === "light"
                           ? "bg-black text-white rounded-full"
                           : ""
                       }
             ${
-              activeTab === item && text === "text-white"
+              activeTab === item && initialTheme === "dark"
                 ? "bg-white text-black rounded-full"
                 : ""
             } p-4 font-bold text-base font-sans`}
@@ -75,15 +78,15 @@ const Navbar = () => {
               </ul>
             </div>
             <div>
-              {themeIcon === true ? (
+              {initialTheme !== "light" ? (
                 <FaSun
-                  onClick={themeUpdater}
+                  onClick={() => changeFunction()}
                   className={`cursor-pointer ${text}`}
                   style={{ width: "30px", height: "30px" }}
                 />
               ) : (
                 <FaMoon
-                  onClick={themeUpdater}
+                  onClick={() => changeFunction()}
                   className={`cursor-pointer ${text}`}
                   style={{ width: "25px", height: "25px" }}
                 />
@@ -96,15 +99,15 @@ const Navbar = () => {
         <div className="flex items-center md:hidden">
           {/* MOBILE THEME BUTTON */}
           <div className="px-3">
-            {themeIcon === true ? (
+            {initialTheme === "light" ? (
               <FaSun
-                onClick={themeUpdater}
+                onClick={() => changeFunction()}
                 className={`cursor-pointer ${text}`}
                 style={{ width: "30px", height: "30px" }}
               />
             ) : (
               <FaMoon
-                onClick={themeUpdater}
+                onClick={() => changeFunction()}
                 className={`cursor-pointer ${text}`}
                 style={{ width: "25px", height: "25px" }}
               />
