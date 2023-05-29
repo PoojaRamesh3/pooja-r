@@ -1,6 +1,6 @@
 import { CgMenu, CgClose } from "react-icons/cg";
 import { FaSun, FaMoon } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateColor, updateTheme, updateTab } from "../redux/action";
 import { content } from "../content";
@@ -14,6 +14,14 @@ const Navbar = () => {
   const text = useSelector((state: any) => state.color.textcolor);
   const activeTab = useSelector((state: any) => state.activeTab);
   const [click, setClick] = useState(false);
+
+  useEffect(() => {
+    let currentLocation = window.location.href.split("/");
+    let endPoint = currentLocation[currentLocation.length - 1];
+    if (endPoint === "") {
+      dispatch(updateTab("Home"));
+    }
+  }, []);
 
   const changeFunction = () => {
     if (initialTheme === "light") {

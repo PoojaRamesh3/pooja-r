@@ -5,6 +5,7 @@ import Projects from "./screens/Projects";
 import Skills from "./screens/Skills";
 import Experiences from "./screens/Experiences";
 import Contact from "./screens/Contact";
+import { useEffect, useState } from "react";
 
 const Router = () => {
   return (
