@@ -4,8 +4,7 @@ import Home from "./screens/Home";
 import Projects from "./screens/Projects";
 import Skills from "./screens/Skills";
 import Experiences from "./screens/Experiences";
-import Contact from "./screens/Contact";
-import { useEffect, useState } from "react";
+import Certificates from "./screens/Certificates";
 
 const Router = () => {
   return (
@@ -16,7 +15,7 @@ const Router = () => {
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/experiences" element={<Experiences />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/certificates" element={<Certificates />} />
         </Route>
       </Routes>
     </BrowserRouter>

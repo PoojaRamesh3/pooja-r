@@ -1,12 +1,12 @@
 import { content } from "../content";
 import PageNotFound from "../components/PageNotFound";
 
-const Contact = () => {
+const Certificates = () => {
   return (
     <>
-      <PageNotFound pageName={content.contact.heading} />
+      <PageNotFound pageName={content.certificates.heading} />
     </>
   );
 };
 
-export default Contact;
+export default Certificates;

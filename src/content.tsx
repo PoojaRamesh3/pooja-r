@@ -57,8 +57,8 @@ export const content = {
       url: "/experiences",
     },
     {
-      listname: "Contact",
-      url: "/contact",
+      listname: "Certificates",
+      url: "/certificates",
     },
   ],
   home: {
@@ -302,9 +302,9 @@ export const content = {
     heading: "Experience",
     sunheading: "",
   },
-  contact: {
-    heading: "Contact",
-    sunheading: "Contact",
+  certificates: {
+    heading: "Certificates",
+    sunheading: "Certificates",
   },
   footer: {
     conclusion: "Developed by Pooja R using :",
