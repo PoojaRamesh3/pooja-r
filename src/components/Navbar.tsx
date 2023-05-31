@@ -105,7 +105,7 @@ const Navbar = () => {
         {/* MOBILE MENU */}
         <div className="flex items-center md:hidden">
           {/* MOBILE THEME BUTTON */}
-          <div className="px-3">
+          <div className="px-4">
             {initialTheme !== "light" ? (
               <FaSun
                 onClick={() => changeFunction()}
