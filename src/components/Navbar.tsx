@@ -21,7 +21,7 @@ const Navbar = () => {
     if (endPoint === "") {
       dispatch(updateTab("Home"));
     }
-  }, []);
+  }, [dispatch]);
 
   const changeFunction = () => {
     if (initialTheme === "light") {
