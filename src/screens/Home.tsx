@@ -18,7 +18,7 @@ const Home = () => {
             src={content.home.profile}
             alt="Pooja R"
             style={{}}
-            className={`rounded-2xl border w-64 h-64 md:w-auto shadow-slate-300 ${
+            className={`rounded-2xl border h-64 md:w-auto shadow-slate-300 ${
               initialTheme === "light" ? "shadow-2xl" : "shadow-md "
             }`}
           />
