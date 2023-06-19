@@ -7,7 +7,7 @@ const Skills = () => {
     <>
       <Heading
         heading={content.skills.heading}
-        subHeading={content.skills.sunheading}
+        subHeading={content.skills.subheading}
       />
       <TabList />
     </>

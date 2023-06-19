@@ -7,7 +7,7 @@ const Projects = () => {
     <>
       <Heading
         heading={content.projects.heading}
-        subHeading={content.projects.sunheading}
+        subHeading={content.projects.subheading}
       />
       <ImageCard />
     </>

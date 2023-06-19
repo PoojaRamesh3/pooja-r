@@ -1,10 +1,15 @@
 import { content } from "../content";
-import PageNotFound from "../components/PageNotFound";
+import Heading from "../components/Heading";
+import Card from "../components/Card";
 
 const Certificates = () => {
   return (
     <>
-      <PageNotFound pageName={content.certificates.heading} />
+      <Heading
+        heading={content.certificates.heading}
+        subHeading={content.certificates.subheading}
+      />
+      <Card />
     </>
   );
 };

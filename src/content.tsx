@@ -35,6 +35,8 @@ import Aws from "./assets/aws.png";
 import Project1 from "./assets/project1.PNG";
 import Project2 from "./assets/project2.PNG";
 import Project3 from "./assets/project3.PNG";
+import PythonCertificate from "./assets/python.jpeg";
+import AwsCertificate from "./assets/aws_devops.jpeg";
 
 export const content = {
   brandname: "Pooja R",
@@ -51,14 +53,13 @@ export const content = {
       listname: "Projects",
       url: "/projects",
     },
-
-    {
-      listname: "Experiences",
-      url: "/experiences",
-    },
     {
       listname: "Certificates",
       url: "/certificates",
+    },
+    {
+      listname: "Experiences",
+      url: "/experiences",
     },
   ],
   home: {
@@ -86,7 +87,7 @@ export const content = {
   },
   skills: {
     heading: "Skills",
-    sunheading:
+    subheading:
       "Some of the tools and technologies that I know and enjoy working with.",
     tabs: [
       {
@@ -275,7 +276,7 @@ export const content = {
   },
   projects: {
     heading: "Projects",
-    sunheading:
+    subheading:
       "Here is a quick list of some of the projects I have worked on.",
     projectslist: [
       {
@@ -298,13 +299,25 @@ export const content = {
       },
     ],
   },
-  experiences: {
-    heading: "Experience",
-    sunheading: "",
-  },
   certificates: {
     heading: "Certificates",
-    sunheading: "Certificates",
+    subheading: "Here are some of the online certificates I own.",
+    certiList: [
+      {
+        certiImg: PythonCertificate,
+        certiTitle: "The Python Programming",
+        certidate: new Date("2020-10-21"),
+      },
+      {
+        certiImg: AwsCertificate,
+        certiTitle: "Azure DevOps & AWS DevOps",
+        certidate: new Date("2020-10-15"),
+      },
+    ],
+  },
+  experiences: {
+    heading: "Experience",
+    subheading: "",
   },
   footer: {
     conclusion: "Developed by Pooja R using :",
