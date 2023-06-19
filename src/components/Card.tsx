@@ -4,9 +4,7 @@ import { content } from "../content";
 const Card = () => {
   const initialTheme = useSelector((state: any) => state.theme);
 
-  const handleClick = (event: any) => {
-    console.log(event.target.value);
-  };
+  const handleClick = (event: any) => {};
 
   return (
     <div
