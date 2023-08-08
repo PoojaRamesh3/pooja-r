@@ -31,6 +31,7 @@ import MangoDB from "./assets/mangoDb.png";
 import Sql from "./assets/sql.png";
 import Git from "./assets/git.png";
 import GitHub from "./assets/github.png";
+import GitLab from "./assets/gitlab.png";
 import Aws from "./assets/aws.png";
 import Project1 from "./assets/project1.PNG";
 import Project2 from "./assets/project2.PNG";
@@ -262,6 +263,13 @@ export const content = {
             level: "Advance",
             url: "http://github.com/",
             bgCol: "bg-slate-400",
+          },
+          {
+            logo: GitLab,
+            language: "GitLab",
+            level: "Advance",
+            url: "https://gitlab.com/",
+            bgCol: "bg-orange-300",
           },
           {
             logo: Aws,
