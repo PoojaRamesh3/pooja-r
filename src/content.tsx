@@ -9,7 +9,7 @@ import {
   SiGmail,
 } from "react-icons/si";
 import { AiFillLinkedin } from "react-icons/ai";
-import Pooja_R from "./assets/Pooja_R.jpg";
+import Pooja_R from "./assets/Pooja-R.jpeg";
 import C from "./assets/c.png";
 import Cpp from "./assets/c++.png";
 import CSharp from "./assets/Csharp.png";
