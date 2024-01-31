@@ -68,11 +68,11 @@ export const content = {
     paragraph: [
       {
         content:
-          "A software developer with two years of professional experience in the industry. My passion for technology and problem-solving has driven me to excel in various aspects of software development.",
+          "A software developer with three years of professional experience in the industry. My passion for technology and problem-solving has driven me to excel in various aspects of software development.",
       },
       {
         content:
-          "Over the past two years, I have honed my skills in full-stack web development, working with both front-end and back-end technologies.",
+          "Over the past three years, I have honed my skills in full-stack web development, working with both front-end and back-end technologies.",
       },
       {
         content:
