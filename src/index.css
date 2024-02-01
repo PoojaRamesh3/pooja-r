@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 ::selection {
-  background-color: #002ead;
+  background-color: deeppink;
   color: white;
 }
