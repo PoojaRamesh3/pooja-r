@@ -41,6 +41,24 @@ html {
 .pf-root section {
   scroll-margin-top: 80px;
 }
+
+/* Text selection: brand violet with white text (AA contrast in both themes).
+   -webkit-text-fill-color keeps gradient-text headings readable while selected. */
+.pf-root {
+  --sel: #6d4cf5;
+}
+.pf-root[data-theme="light"] {
+  --sel: #5b3df5;
+}
+.pf-root ::selection {
+  background-color: var(--sel);
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+}
+.pf-root ::-moz-selection {
+  background-color: var(--sel);
+  color: #fff;
+}
 .pf-muted {
   color: var(--muted);
 }

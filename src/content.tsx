@@ -39,49 +39,53 @@ export const content = {
     { listname: "Skills", url: "#skills" },
     { listname: "Experience", url: "#experience" },
     { listname: "Projects", url: "#projects" },
-    // { listname: "Certificates", url: "#certificates" },
     { listname: "Contact", url: "#contact" },
   ],
   hero: {
-    eyebrow: "Senior Frontend Engineer · 10+ years",
+    eyebrow: "Software Developer · 6+ Years of Experience",
     greeting: "Hi, I'm Pooja R",
-    lines: ["I design & build", "fast, accessible,", "delightful web apps."],
-    roles: [
-      "Frontend Architect",
-      "React & TypeScript Specialist",
-      "Design-System Builder",
-      "Performance Obsessive",
+    lines: [
+      "Building scalable",
+      "React applications",
+      "with clean, modern UI.",
     ],
-    sub: "A decade of crafting products used by thousands — from pixel-perfect interfaces to scalable full-stack systems.",
+    roles: [
+      "React.js Developer",
+      "JavaScript & TypeScript Developer",
+      "Frontend Application Developer",
+      "UI Performance Enthusiast",
+    ],
+    sub: "Frontend-focused Software Developer with 6+ years of experience building responsive, scalable and user-friendly web applications using React, JavaScript and TypeScript. Passionate about reusable architecture, clean code and delivering high-quality user experiences.",
   },
   stats: [
-    { value: 10, suffix: "+", label: "Years of experience" },
-    { value: 40, suffix: "+", label: "Projects delivered" },
-    { value: 15, suffix: "+", label: "Engineers mentored" },
-    { value: 98, suffix: "", label: "Avg. Lighthouse score" },
+    { value: 6, suffix: "+", label: "Years of experience" },
+    { value: 3, suffix: "+", label: "Featured projects" },
+    { value: 8, suffix: "+", label: "Core technologies" },
+    { value: 4, suffix: "", label: "Development focus areas" },
   ],
   about: {
     heading: "About me",
     paragraphs: [
-      "I'm a frontend-focused software engineer with over ten years of experience turning complex requirements into clean, performant and accessible products. I've worked across startups and large teams, owning everything from architecture decisions to the last micro-interaction.",
-      "My sweet spot is React and TypeScript, backed by solid full-stack skills in Node.js and ASP.NET Core. I care deeply about design systems, web performance, testing and developer experience — and I enjoy mentoring teams so quality scales with the codebase.",
+      "I'm a Frontend-focused Software Developer with 6+ years of experience developing interactive, responsive and scalable web applications. I specialize in React.js, JavaScript and TypeScript, with experience translating complex business requirements into maintainable and reusable UI components.",
+      "My experience includes building data-driven interfaces, managing application state with Redux, integrating REST APIs, implementing complex form validations and optimizing application performance using techniques such as memoization and lazy loading. I also have working knowledge of Node.js, ASP.NET Core and SQL databases.",
+      "I enjoy solving technical challenges, writing clean and maintainable code, collaborating with cross-functional teams and continuously improving my frontend development skills.",
     ],
     highlights: [
       {
-        title: "Architecture",
-        text: "Scalable component libraries, micro-frontends and design systems.",
+        title: "Frontend Development",
+        text: "Building scalable React applications with reusable components, TypeScript and modern JavaScript.",
       },
       {
-        title: "Performance",
-        text: "Core Web Vitals tuning, code splitting and lean bundles.",
+        title: "State Management & APIs",
+        text: "Managing complex application state using Redux and integrating REST APIs for dynamic applications.",
       },
       {
-        title: "Accessibility",
-        text: "WCAG-minded UI that works for everyone, on every device.",
+        title: "Performance Optimization",
+        text: "Improving application performance through memoization, lazy loading, efficient rendering and code optimization.",
       },
       {
-        title: "Leadership",
-        text: "Code reviews, mentoring and pragmatic technical direction.",
+        title: "Responsive UI Development",
+        text: "Creating user-friendly, responsive interfaces with modern CSS, Tailwind CSS, Bootstrap and Sass.",
       },
     ],
   },
@@ -136,52 +140,69 @@ export const content = {
   },
   experiences: {
     heading: "Experience",
-    subheading: "A decade of building and leading frontend work.",
-    // NOTE: placeholder companies & details — replace with your real history.
+    subheading:
+      "Building and maintaining scalable web applications through modern frontend technologies.",
     list: [
       {
-        role: "Senior Frontend Engineer / Tech Lead",
-        company: "Company Name",
-        period: "2021 — Present",
+        role: "Software Developer",
+        company: "Excelsoft Technologies Ltd",
+        period: "January 2022 — Present",
         points: [
-          "Lead a team of 6 engineers building a React + TypeScript platform serving thousands of daily users.",
-          "Created a shared design system and component library that cut UI delivery time by ~40%.",
-          "Improved Core Web Vitals across key pages, raising Lighthouse scores to 95+.",
+          "Developing and maintaining interactive, responsive web applications using React.js, JavaScript, TypeScript, HTML and CSS.",
+          "Building reusable and modular UI components to improve maintainability, consistency and code reusability across applications.",
+          "Implementing complex, data-driven interfaces and nested UI structures based on dynamic application requirements.",
+          "Managing application state and asynchronous UI workflows using Redux and integrating REST APIs using Axios.",
+          "Developing form validations, conditional rendering and interactive user workflows to support complex business requirements.",
+          "Improving application performance using React optimization techniques, including memoization and lazy loading.",
+          "Collaborating with backend developers, QA engineers and team members to deliver features, resolve issues and maintain application quality.",
+          "Participating in code reviews, debugging and Agile development activities.",
         ],
-        tags: ["React", "TypeScript", "Redux", "Tailwind", "Jest"],
+        tags: [
+          "React.js",
+          "JavaScript",
+          "TypeScript",
+          "Redux",
+          "REST APIs",
+          "Axios",
+          "Tailwind CSS",
+          "HTML",
+          "SCSS",
+          "Git",
+        ],
       },
       {
-        role: "Frontend Engineer",
-        company: "Company Name",
-        period: "2018 — 2021",
+        role: "Web Developer",
+        company: "Inboundsys Webgalaxy Pvt Ltd",
+        period: "November 2020 — January 2022",
+
         points: [
-          "Owned the customer-facing web app from redesign to launch, collaborating closely with design and product.",
-          "Introduced automated testing and CI pipelines, reducing production regressions significantly.",
-          "Mentored junior developers through code reviews and pairing.",
+          "Developed and deployed responsive websites using HTML, CSS, JavaScript and HubSpot for multiple client engagements.",
+          "Converted design mockups into responsive, production-ready web interfaces.",
+          "Ensured cross-browser and cross-device compatibility through systematic testing and debugging.",
+          "Identified and resolved UI issues to improve website functionality and reduce post-launch bug reports.",
         ],
-        tags: ["React", "JavaScript", "Sass", "Node.js", "GitLab CI"],
-      },
-      {
-        role: "Full-Stack Developer",
-        company: "Company Name",
-        period: "2016 — 2018",
-        points: [
-          "Built responsive websites and internal tools with ASP.NET Core, SQL databases and modern JavaScript.",
-          "Delivered HubSpot and WordPress solutions that improved lead capture and marketing workflows.",
+
+        tags: [
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "HubSpot",
+          "Responsive Design",
+          "Web Development",
         ],
-        tags: ["ASP.NET Core", "C#", "MySQL", "HubSpot", "WordPress"],
       },
     ],
   },
   projects: {
     heading: "Selected Projects",
-    subheading: "A few things I've built and shipped.",
+    subheading:
+      "Projects demonstrating my frontend development and application-building experience.",
     projectslist: [
       {
         name: "Text Utilizer",
         description:
-          "A handy React toolkit for transforming, analysing and cleaning text in real time.",
-        tags: ["React", "Bootstrap"],
+          "A React-based text utility application that allows users to transform, analyze and clean text in real time through interactive features and a responsive interface.",
+        tags: ["React.js", "JavaScript", "Bootstrap", "HTML", "CSS"],
         proimg: Project1,
         prolink: "https://poojaramesh3.github.io/text-utilizer-react-app/",
         gitlink: "https://github.com/PoojaRamesh3/text-utilizer-react-app",
@@ -189,8 +210,8 @@ export const content = {
       {
         name: "Naming Ideas",
         description:
-          "A creative name generator that helps spark ideas for products, pets and projects.",
-        tags: ["JavaScript", "CSS"],
+          "A lightweight name-generation application that helps users discover creative naming ideas for products, pets and personal projects using JavaScript.",
+        tags: ["JavaScript", "HTML", "CSS"],
         proimg: Project2,
         prolink: "https://poojaramesh3.github.io/naming-ideas/",
         gitlink: "https://github.com/PoojaRamesh3/naming-ideas",
@@ -198,8 +219,8 @@ export const content = {
       {
         name: "Newsletter Sign-Up",
         description:
-          "A full-stack newsletter subscription flow built with Node.js and a mailing-list API.",
-        tags: ["Node.js", "Express", "API"],
+          "A full-stack newsletter subscription application with a responsive frontend, Node.js backend and mailing-list API integration.",
+        tags: ["Node.js", "Express.js", "JavaScript", "REST API"],
         proimg: Project3,
         prolink: "https://tame-ruby-ladybug-coat.cyclic.app/",
         gitlink: "https://github.com/PoojaRamesh3/News-Letter-SignUp",
@@ -208,7 +229,7 @@ export const content = {
   },
   certificates: {
     heading: "Certificates",
-    subheading: "Continuous learning, validated.",
+    subheading: "Continuous learning and professional development.",
     certiList: [
       {
         certiImg: PythonCertificate,
@@ -224,12 +245,9 @@ export const content = {
   },
   contact: {
     heading: "Let's build something great",
-    text: "Open to senior and lead frontend roles, consulting and interesting collaborations. My inbox is always open.",
+    text: "I'm interested in Senior React Developer and Frontend Engineer opportunities where I can contribute to building scalable, high-performance web applications. Feel free to connect for professional opportunities and collaborations.",
     email: "pooja.ramesh331@gmail.com",
-    // Put your PDF in the project's /public folder with this exact name.
     resumeUrl: "/Pooja-R-Resume.pdf",
-    // Optional: paste a Formspree (or similar) endpoint, e.g. "https://formspree.io/f/xxxxxxxx".
-    // Leave empty to fall back to opening the visitor's email app.
     formEndpoint: "",
     socials: [
       {
@@ -248,7 +266,7 @@ export const content = {
         url: "https://www.linkedin.com/in/pooja--r/",
       },
       {
-        name: "LeetCode",
+        name: "Instagram",
         icon: <RiInstagramLine size={22} />,
         url: "https://www.instagram.com/poojaramesh__",
       },
