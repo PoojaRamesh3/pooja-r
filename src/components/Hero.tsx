@@ -15,8 +15,19 @@ const Stat = ({ value, suffix, label, start }: any) => {
   );
 };
 
-const Hero = () => {
+// The typewriter updates state every few milliseconds, so it lives in its own
+// tiny component: only this span re-renders, not the whole hero.
+const Typed = () => {
   const role = useTyper(content.hero.roles);
+  return (
+    <>
+      <span style={{ color: "var(--a2)" }}>{role}</span>
+      <span className="pf-caret" />
+    </>
+  );
+};
+
+const Hero = () => {
   const { ref, inView } = useInView<HTMLDivElement>(0.3);
 
   return (
@@ -67,8 +78,7 @@ const Hero = () => {
           className="pf-fade-up mt-6 text-xl md:text-2xl font-semibold h-9"
           style={{ ["--d" as any]: "950ms" }}
         >
-          <span style={{ color: "var(--a2)" }}>{role}</span>
-          <span className="pf-caret" />
+          <Typed />
         </p>
 
         <p

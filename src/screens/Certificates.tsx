@@ -28,6 +28,8 @@ const Certificates = () => (
             >
               <div className="overflow-hidden">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={c.certiImg}
                   alt={c.certiTitle}
                   className="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-105"

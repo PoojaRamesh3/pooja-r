@@ -51,6 +51,8 @@ const Projects = () => (
                 className="block overflow-hidden"
               >
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={p.proimg}
                   alt={p.name}
                   className="w-full h-48 object-cover object-top transition-transform duration-700 hover:scale-110"

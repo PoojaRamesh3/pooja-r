@@ -16,7 +16,13 @@ const Group = ({ group, index }: any) => {
           <div key={it.name}>
             <div className="flex items-center justify-between text-sm mb-1.5">
               <span className="flex items-center gap-2 font-semibold">
-                <img src={it.logo} alt="" className="w-5 h-5 object-contain" />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src={it.logo}
+                  alt=""
+                  className="w-5 h-5 object-contain"
+                />
                 {it.name}
               </span>
               <span className="pf-muted">{it.pct}%</span>
@@ -61,7 +67,13 @@ const Skills = () => {
                   key={i}
                   className="pf-card flex items-center gap-3 px-5 py-3 whitespace-nowrap"
                 >
-                  <img src={s.logo} alt="" className="w-7 h-7 object-contain" />
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    src={s.logo}
+                    alt=""
+                    className="w-7 h-7 object-contain"
+                  />
                   <span className="font-semibold text-sm">{s.name}</span>
                 </div>
               ))}

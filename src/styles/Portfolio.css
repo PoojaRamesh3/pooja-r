@@ -172,55 +172,53 @@ html {
   );
   opacity: 0.5;
 }
+/* Soft radial gradients instead of filter: blur() — looks the same, far cheaper to paint. */
 .pf-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
   opacity: 0.35;
   pointer-events: none;
+  will-change: transform;
 }
 .pf-blob-1 {
-  width: 420px;
-  height: 420px;
-  background: var(--a1);
-  top: -100px;
-  left: -80px;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, var(--a1), transparent 68%);
+  top: -180px;
+  left: -160px;
   animation: pf-float 14s ease-in-out infinite;
 }
 .pf-blob-2 {
-  width: 360px;
-  height: 360px;
-  background: var(--a2);
-  top: 20%;
-  right: -100px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, var(--a2), transparent 68%);
+  top: 15%;
+  right: -180px;
   animation: pf-float 18s ease-in-out infinite reverse;
 }
 .pf-blob-3 {
-  width: 300px;
-  height: 300px;
-  background: var(--a3);
-  bottom: -80px;
-  left: 35%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, var(--a3), transparent 68%);
+  bottom: -160px;
+  left: 30%;
   animation: pf-float 16s ease-in-out infinite;
 }
 .pf-glow {
   position: fixed;
+  left: -250px;
+  top: -250px;
   width: 500px;
   height: 500px;
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
+  will-change: transform;
   background: radial-gradient(
     circle,
     color-mix(in srgb, var(--a1) 22%, transparent),
     transparent 65%
   );
-  transform: translate(-50%, -50%);
-  left: var(--mx, 50%);
-  top: var(--my, 30%);
-  transition:
-    left 0.25s ease-out,
-    top 0.25s ease-out;
 }
 .pf-progress {
   position: fixed;
@@ -230,7 +228,8 @@ html {
   z-index: 60;
   width: 100%;
   transform-origin: 0 50%;
-  transform: scaleX(var(--p, 0));
+  transform: scaleX(0);
+  will-change: transform;
   background: linear-gradient(90deg, var(--a1), var(--a2), var(--a3));
 }
 
@@ -482,6 +481,39 @@ html {
   50% {
     transform: scale(0.4);
     opacity: 0.5;
+  }
+}
+
+/* Phones & touch devices: drop the expensive effects (blur, infinite paint animations, tilt). */
+@media (max-width: 767px), (hover: none) {
+  .pf-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .pf-grad-text {
+    animation: none;
+  }
+  .pf-blob {
+    animation: none;
+    opacity: 0.28;
+  }
+  .pf-tilt {
+    transform: none !important;
+    will-change: auto;
+  }
+  .pf-dot::after {
+    animation: none;
+  }
+  .pf-marquee-track {
+    animation-duration: 60s;
+  }
+  .reveal {
+    transition-duration: 0.6s;
+    transform: translateY(24px);
+  }
+  .reveal-left,
+  .reveal-right {
+    transform: translateY(24px);
   }
 }
 

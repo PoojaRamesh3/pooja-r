@@ -13,23 +13,49 @@ import Hero from "../components/Hero";
 
 const Layout = () => {
   const theme = useSelector((state: any) => state.theme);
-  const rootRef = useRef<HTMLDivElement>(null);
+  const progressRef = useRef<HTMLDivElement>(null);
+  const glowRef = useRef<HTMLDivElement>(null);
   const [showTop, setShowTop] = useState(false);
 
   useEffect(() => {
-    const root = rootRef.current;
-    const onScroll = () => {
+    // Write to the small elements directly (not to a CSS variable on the root),
+    // so scrolling never forces the whole page to recalculate styles.
+    let ticking = false;
+    const update = () => {
+      ticking = false;
       const max = document.documentElement.scrollHeight - window.innerHeight;
-      root?.style.setProperty(
-        "--p",
-        String(max > 0 ? window.scrollY / max : 0),
-      );
+      const p = max > 0 ? window.scrollY / max : 0;
+      if (progressRef.current)
+        progressRef.current.style.transform = `scaleX(${p})`;
       setShowTop(window.scrollY > 500);
     };
-    const onMove = (e: MouseEvent) => {
-      root?.style.setProperty("--mx", `${e.clientX}px`);
-      root?.style.setProperty("--my", `${e.clientY}px`);
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
     };
+
+    // Cursor glow only on devices with a real mouse.
+    const hasMouse = window.matchMedia(
+      "(hover: hover) and (pointer: fine)",
+    ).matches;
+    let mx = 0;
+    let my = 0;
+    let moving = false;
+    const onMove = (e: MouseEvent) => {
+      mx = e.clientX;
+      my = e.clientY;
+      if (!moving) {
+        moving = true;
+        requestAnimationFrame(() => {
+          moving = false;
+          if (glowRef.current)
+            glowRef.current.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
+        });
+      }
+    };
+
     // Smooth-scroll for in-page links WITHOUT adding "#section" to the URL.
     const cleanUrl = () =>
       window.history.replaceState(
@@ -51,7 +77,6 @@ const Layout = () => {
           ?.scrollIntoView({ behavior: "smooth", block: "start" });
       cleanUrl();
     };
-    // If someone opens a link that already contains a hash, jump there then tidy the URL.
     if (window.location.hash) {
       const id = window.location.hash.slice(1);
       setTimeout(() => {
@@ -59,9 +84,11 @@ const Layout = () => {
         cleanUrl();
       }, 100);
     }
-    onScroll();
+
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("mousemove", onMove, { passive: true });
+    if (hasMouse)
+      window.addEventListener("mousemove", onMove, { passive: true });
     document.addEventListener("click", onClick);
     return () => {
       window.removeEventListener("scroll", onScroll);
@@ -72,12 +99,11 @@ const Layout = () => {
 
   return (
     <div
-      ref={rootRef}
       className="pf-root min-h-screen"
       data-theme={theme === "light" ? "light" : "dark"}
     >
-      <div className="pf-progress" />
-      <div className="pf-glow hidden md:block" />
+      <div ref={progressRef} className="pf-progress" />
+      <div ref={glowRef} className="pf-glow hidden md:block" />
       <Navbar />
       <main className="relative z-10">
         <Hero />
@@ -96,18 +122,13 @@ const Layout = () => {
       </footer>
       <button
         aria-label="Back to top"
-        onClick={() => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         className={`fixed right-6 bottom-6 z-40 w-11 h-11 rounded-full pf-border flex items-center justify-center text-2xl transition-all duration-300 ${
           showTop
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-4 pointer-events-none"
         }`}
-        style={{
-          background: "var(--card-hover)",
-          backdropFilter: "blur(10px)",
-        }}
+        style={{ background: "var(--card-hover)" }}
       >
         <BiUpArrowAlt />
       </button>
