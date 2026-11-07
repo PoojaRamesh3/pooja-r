@@ -1,154 +1,133 @@
+import { useEffect, useState } from "react";
 import { CgMenu, CgClose } from "react-icons/cg";
 import { FaSun, FaMoon } from "react-icons/fa";
-import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { updateColor, updateTheme, updateTab } from "../redux/action";
+import { useDispatch, useSelector } from "react-redux";
+import { updateColor, updateTheme } from "../redux/action";
 import { content } from "../content";
-import { Link } from "react-router-dom";
-import Hamburger from "./Hamburger";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const initialTheme = useSelector((state: any) => state.theme);
-  const background = useSelector((state: any) => state.color.background);
-  const text = useSelector((state: any) => state.color.textcolor);
-  const activeTab = useSelector((state: any) => state.activeTab);
-  const [click, setClick] = useState(false);
+  const theme = useSelector((state: any) => state.theme);
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
-    const currentLocation = window.location.href.split("/");
-    const endPoint = currentLocation[currentLocation.length - 1];
-    if (endPoint === "") {
-      dispatch(updateTab("Home"));
-    }
-  }, [dispatch]);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-  const changeFunction = () => {
-    if (initialTheme === "light") {
-      dispatch(updateColor("dark"));
-      dispatch(updateTheme("dark"));
-    } else {
-      dispatch(updateColor("light"));
-      dispatch(updateTheme("light"));
-    }
+  useEffect(() => {
+    const ids = content.navbar.map((n) => n.url.slice(1));
+    const io = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
+    return () => io.disconnect();
+  }, []);
+
+  const toggleTheme = () => {
+    const next = theme === "light" ? "dark" : "light";
+    dispatch(updateColor(next));
+    dispatch(updateTheme(next));
   };
 
-  const handleTab = (navlink: any) => {
-    dispatch(updateTab(navlink.listname));
-  };
+  const ThemeBtn = (
+    <button
+      onClick={toggleTheme}
+      aria-label="Toggle theme"
+      className="w-10 h-10 rounded-full pf-border flex items-center justify-center transition hover:rotate-12 hover:scale-110"
+      style={{ background: "var(--card)" }}
+    >
+      {theme === "light" ? <FaMoon /> : <FaSun />}
+    </button>
+  );
 
   return (
-    <nav
-      className={`md:border-b-2 fixed top-0 right-0 w-full z-10 ${
-        initialTheme === "light" ? "border-black" : "border-white"
-      } ${text}`}
-    >
-      <div
-        className={`flex w-full justify-between p-5 md:p-3 items-center ${background}`}
+    <header className="fixed top-0 inset-x-0 z-50 px-4 pt-4">
+      <nav
+        className="mx-auto max-w-5xl flex items-center justify-between rounded-full px-5 py-3 transition-all duration-500"
+        style={{
+          background: scrolled
+            ? "color-mix(in srgb, var(--bg) 70%, transparent)"
+            : "transparent",
+          backdropFilter: scrolled ? "blur(16px)" : "none",
+          border: `1px solid ${scrolled ? "var(--border)" : "transparent"}`,
+        }}
       >
-        <div>
-          <Link
-            onClick={() => handleTab(content.navbar[0])}
-            to="/"
-            className={`font-black text-2xl font-sans hover:underline hover:decoration-4 ${text}`}
+        <a href="#top" className="text-xl font-black tracking-tight">
+          {content.brandname}
+          <span className="pf-grad-text">.</span>
+        </a>
+
+        <ul className="hidden md:flex items-center gap-1">
+          {content.navbar.map((item) => {
+            const on = active === item.url.slice(1);
+            return (
+              <li key={item.url}>
+                <a
+                  href={item.url}
+                  className="px-4 py-2 rounded-full text-sm font-semibold transition-colors"
+                  style={{
+                    background: on ? "var(--card-hover)" : "transparent",
+                    color: on ? "var(--fg)" : "var(--muted)",
+                  }}
+                >
+                  {item.listname}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+
+        <div className="flex items-center gap-3">
+          <a
+            href={content.contact.resumeUrl}
+            download
+            className="hidden sm:inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold pf-border transition hover:-translate-y-0.5"
+            style={{ background: "var(--card)" }}
           >
-            {content.brandname}
-          </Link>
+            Resume
+          </a>
+          {ThemeBtn}
+          <button
+            className="md:hidden text-2xl"
+            aria-label="Menu"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <CgClose /> : <CgMenu />}
+          </button>
         </div>
-        <div className="hidden md:block">
-          <div className="flex items-center">
-            <div className="p-5">
-              <ul className="list-none flex w-full justify-between">
-                {content.navbar.map((item, index) => (
-                  <li
-                    onClick={() => handleTab(item)}
-                    key={index}
-                    className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110"
-                  >
-                    <Link
-                      to={item.url}
-                      className={`${
-                        activeTab === item.listname && initialTheme === "light"
-                          ? "bg-black text-white rounded-full"
-                          : ""
-                      }
-            ${
-              activeTab === item.listname && initialTheme === "dark"
-                ? "bg-white text-black rounded-full"
-                : ""
-            } p-4 font-bold text-base font-sans`}
-                    >
-                      {item.listname}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              {initialTheme !== "light" ? (
-                <FaSun
-                  onClick={() => changeFunction()}
-                  className={`cursor-pointer ${text}`}
-                  style={{ width: "30px", height: "30px" }}
-                />
-              ) : (
-                <FaMoon
-                  onClick={() => changeFunction()}
-                  className={`cursor-pointer ${text}`}
-                  style={{ width: "25px", height: "25px" }}
-                />
-              )}
-            </div>
-          </div>
+      </nav>
+
+      {open && (
+        <div
+          className="md:hidden mx-auto max-w-5xl mt-2 rounded-3xl p-3 pf-border"
+          style={{
+            background: "color-mix(in srgb, var(--bg) 92%, transparent)",
+            backdropFilter: "blur(16px)",
+          }}
+        >
+          {content.navbar.map((item) => (
+            <a
+              key={item.url}
+              href={item.url}
+              onClick={() => setOpen(false)}
+              className="block px-4 py-3 rounded-2xl font-semibold"
+            >
+              {item.listname}
+            </a>
+          ))}
         </div>
-
-        {/* MOBILE MENU */}
-        <div className="flex items-center md:hidden">
-          {/* MOBILE THEME BUTTON */}
-          <div className="px-4">
-            {initialTheme !== "light" ? (
-              <FaSun
-                onClick={() => changeFunction()}
-                className={`cursor-pointer ${text}`}
-                style={{ width: "30px", height: "30px" }}
-              />
-            ) : (
-              <FaMoon
-                onClick={() => changeFunction()}
-                className={`cursor-pointer ${text}`}
-                style={{ width: "25px", height: "25px" }}
-              />
-            )}
-          </div>
-
-          {/* MOBILE HAMBURGER AND CLOSE BUTTON */}
-          <div className="md:hidden">
-            {click === true ? (
-              <CgClose
-                className={`${text}`}
-                style={{ width: "30px", height: "30px" }}
-                onClick={() => {
-                  setClick(!click);
-                }}
-              />
-            ) : (
-              <CgMenu
-                className={`${text}`}
-                style={{ width: "30px", height: "30px" }}
-                onClick={() => {
-                  setClick(!click);
-                }}
-              />
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* MOBILE HAMBURGER MENU */}
-      <div className={`bg-black md:hidden ${background}`}>
-        {click === true && <Hamburger textColor={text} close={setClick} />}
-      </div>
-    </nav>
+      )}
+    </header>
   );
 };
 

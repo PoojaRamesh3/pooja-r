@@ -1,0 +1,489 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.pf-root {
+  --bg: #07070b;
+  --fg: #f4f4f8;
+  --muted: #9a9aae;
+  --card: rgba(255, 255, 255, 0.04);
+  --card-hover: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.1);
+  --a1: #7c5cff;
+  --a2: #22d3ee;
+  --a3: #f472b6;
+  background: var(--bg);
+  color: var(--fg);
+  font-family:
+    "Inter",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  position: relative;
+  overflow-x: hidden;
+  transition:
+    background 0.5s ease,
+    color 0.5s ease;
+}
+.pf-root[data-theme="light"] {
+  --bg: #fafaff;
+  --fg: #12121c;
+  --muted: #5d5d73;
+  --card: rgba(18, 18, 28, 0.035);
+  --card-hover: rgba(18, 18, 28, 0.06);
+  --border: rgba(18, 18, 28, 0.12);
+  --a1: #5b3df5;
+  --a2: #0891b2;
+  --a3: #db2777;
+}
+.pf-root section {
+  scroll-margin-top: 80px;
+}
+.pf-muted {
+  color: var(--muted);
+}
+.pf-border {
+  border: 1px solid var(--border);
+}
+.pf-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(10px);
+  transition:
+    background 0.3s,
+    border-color 0.3s,
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+.pf-card:hover {
+  background: var(--card-hover);
+  border-color: color-mix(in srgb, var(--a1) 50%, var(--border));
+}
+.pf-grad-text {
+  background: linear-gradient(
+    110deg,
+    var(--a1),
+    var(--a2),
+    var(--a3),
+    var(--a1)
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: pf-shine 6s linear infinite;
+}
+.pf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s,
+    background 0.25s;
+}
+.pf-btn:hover {
+  transform: translateY(-3px);
+}
+/* Higher specificity (.pf-root prefix) so Tailwind's button reset
+   (background-image: none) can never override these, in any theme. */
+.pf-root .pf-btn {
+  cursor: pointer;
+  border: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+.pf-root .pf-btn-primary {
+  background-color: var(--a1);
+  background-image: linear-gradient(110deg, var(--a1), var(--a2));
+  color: #fff !important;
+  box-shadow: 0 10px 30px -10px var(--a1);
+}
+.pf-root .pf-btn-primary:hover {
+  box-shadow: 0 16px 40px -10px var(--a1);
+}
+.pf-root .pf-btn-ghost {
+  border: 1px solid var(--border);
+  background-color: var(--card);
+  color: var(--fg);
+}
+.pf-root .pf-btn-ghost:hover {
+  background-color: var(--card-hover);
+}
+.pf-root .pf-btn:disabled {
+  cursor: not-allowed;
+}
+.pf-chip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--muted);
+}
+.pf-section-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--a2);
+  font-weight: 700;
+}
+
+/* background */
+.pf-grid-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, #000 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    #000 20%,
+    transparent 70%
+  );
+  opacity: 0.5;
+}
+.pf-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+.pf-blob-1 {
+  width: 420px;
+  height: 420px;
+  background: var(--a1);
+  top: -100px;
+  left: -80px;
+  animation: pf-float 14s ease-in-out infinite;
+}
+.pf-blob-2 {
+  width: 360px;
+  height: 360px;
+  background: var(--a2);
+  top: 20%;
+  right: -100px;
+  animation: pf-float 18s ease-in-out infinite reverse;
+}
+.pf-blob-3 {
+  width: 300px;
+  height: 300px;
+  background: var(--a3);
+  bottom: -80px;
+  left: 35%;
+  animation: pf-float 16s ease-in-out infinite;
+}
+.pf-glow {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--a1) 22%, transparent),
+    transparent 65%
+  );
+  transform: translate(-50%, -50%);
+  left: var(--mx, 50%);
+  top: var(--my, 30%);
+  transition:
+    left 0.25s ease-out,
+    top 0.25s ease-out;
+}
+.pf-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  z-index: 60;
+  width: 100%;
+  transform-origin: 0 50%;
+  transform: scaleX(var(--p, 0));
+  background: linear-gradient(90deg, var(--a1), var(--a2), var(--a3));
+}
+
+/* reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px) scale(0.98);
+  transition:
+    opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--d, 0ms);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+.reveal-left {
+  transform: translateX(-48px);
+}
+.reveal-right {
+  transform: translateX(48px);
+}
+
+/* hero lines */
+.pf-line {
+  display: block;
+  overflow: hidden;
+}
+.pf-line > span {
+  display: block;
+  transform: translateY(110%);
+  animation: pf-rise 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: var(--d, 0ms);
+}
+.pf-fade-up {
+  opacity: 0;
+  animation: pf-fade-up 0.9s ease forwards;
+  animation-delay: var(--d, 0ms);
+}
+.pf-caret {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  margin-left: 4px;
+  background: var(--a2);
+  vertical-align: -0.12em;
+  animation: pf-blink 1s steps(1) infinite;
+}
+.pf-scroll-dot {
+  animation: pf-scroll 1.8s ease-in-out infinite;
+}
+
+/* form */
+.pf-input {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  border-radius: 0.9rem;
+  font: inherit;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  transition:
+    border-color 0.25s,
+    box-shadow 0.25s,
+    background 0.25s;
+}
+.pf-input::placeholder {
+  color: var(--muted);
+}
+.pf-input:focus {
+  outline: none;
+  border-color: var(--a2);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--a2) 18%, transparent);
+}
+.pf-hp {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+/* marquee */
+.pf-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+}
+.pf-marquee-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  animation: pf-marquee 40s linear infinite;
+}
+.pf-marquee:hover .pf-marquee-track {
+  animation-play-state: paused;
+}
+
+/* skill bar */
+.pf-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+.pf-bar > i {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--a1), var(--a2));
+  transition: width 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: var(--d, 0ms);
+}
+.in .pf-bar > i,
+.pf-bar.in > i {
+  width: var(--w);
+}
+
+/* timeline */
+.pf-timeline {
+  position: relative;
+}
+.pf-timeline::before {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(var(--a1), var(--a2), transparent);
+}
+.pf-dot {
+  position: absolute;
+  left: 0;
+  top: 1.6rem;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--a2);
+}
+.pf-dot::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: var(--a2);
+  animation: pf-pulse 2s ease-in-out infinite;
+}
+
+/* tilt card */
+.pf-tilt {
+  transform: perspective(900px) rotateX(var(--rx, 0deg))
+    rotateY(var(--ry, 0deg));
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+.pf-tilt.leave {
+  transition: transform 0.5s ease;
+}
+.pf-spot {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(
+    400px circle at var(--sx, 50%) var(--sy, 50%),
+    color-mix(in srgb, var(--a1) 25%, transparent),
+    transparent 45%
+  );
+}
+.pf-tilt:hover .pf-spot {
+  opacity: 1;
+}
+
+@keyframes pf-shine {
+  to {
+    background-position: 250% center;
+  }
+}
+@keyframes pf-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(40px, -30px) scale(1.12);
+  }
+}
+@keyframes pf-rise {
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes pf-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pf-blink {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes pf-scroll {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes pf-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes pf-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.4);
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .pf-line > span,
+  .pf-fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  .pf-blob,
+  .pf-marquee-track,
+  .pf-grad-text,
+  .pf-dot::after,
+  .pf-scroll-dot {
+    animation: none !important;
+  }
+}

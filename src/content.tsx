@@ -1,15 +1,7 @@
-import { DiJavascript } from "react-icons/di";
-import { BsGit, BsGithub } from "react-icons/bs";
-import { RiReactjsLine } from "react-icons/ri";
-import { IoLogoNodejs } from "react-icons/io";
-import {
-  SiTypescript,
-  SiTailwindcss,
-  SiLeetcode,
-  SiGmail,
-} from "react-icons/si";
 import { AiFillLinkedin } from "react-icons/ai";
-import Pooja_R from "./assets/Pooja-R.jpeg";
+import { BsGithub } from "react-icons/bs";
+import { RiInstagramLine } from "react-icons/ri";
+import { SiGmail } from "react-icons/si";
 import C from "./assets/c.png";
 import Cpp from "./assets/c++.png";
 import CSharp from "./assets/Csharp.png";
@@ -42,265 +34,172 @@ import AwsCertificate from "./assets/aws_devops.jpeg";
 export const content = {
   brandname: "Pooja R",
   navbar: [
-    {
-      listname: "Home",
-      url: "/",
-    },
-    {
-      listname: "Skills",
-      url: "/skills",
-    },
-    {
-      listname: "Projects",
-      url: "/projects",
-    },
-    {
-      listname: "Certificates",
-      url: "/certificates",
-    },
-    {
-      listname: "Experiences",
-      url: "/experiences",
-    },
+    { listname: "Home", url: "#top" },
+    { listname: "About", url: "#about" },
+    { listname: "Skills", url: "#skills" },
+    { listname: "Experience", url: "#experience" },
+    { listname: "Projects", url: "#projects" },
+    // { listname: "Certificates", url: "#certificates" },
+    { listname: "Contact", url: "#contact" },
   ],
-  home: {
-    heading: "Hello, I'm Pooja R!",
-    paragraph: [
+  hero: {
+    eyebrow: "Senior Frontend Engineer · 10+ years",
+    greeting: "Hi, I'm Pooja R",
+    lines: ["I design & build", "fast, accessible,", "delightful web apps."],
+    roles: [
+      "Frontend Architect",
+      "React & TypeScript Specialist",
+      "Design-System Builder",
+      "Performance Obsessive",
+    ],
+    sub: "A decade of crafting products used by thousands — from pixel-perfect interfaces to scalable full-stack systems.",
+  },
+  stats: [
+    { value: 10, suffix: "+", label: "Years of experience" },
+    { value: 40, suffix: "+", label: "Projects delivered" },
+    { value: 15, suffix: "+", label: "Engineers mentored" },
+    { value: 98, suffix: "", label: "Avg. Lighthouse score" },
+  ],
+  about: {
+    heading: "About me",
+    paragraphs: [
+      "I'm a frontend-focused software engineer with over ten years of experience turning complex requirements into clean, performant and accessible products. I've worked across startups and large teams, owning everything from architecture decisions to the last micro-interaction.",
+      "My sweet spot is React and TypeScript, backed by solid full-stack skills in Node.js and ASP.NET Core. I care deeply about design systems, web performance, testing and developer experience — and I enjoy mentoring teams so quality scales with the codebase.",
+    ],
+    highlights: [
       {
-        content:
-          "A software developer with three years of professional experience in the industry. My passion for technology and problem-solving has driven me to excel in various aspects of software development.",
+        title: "Architecture",
+        text: "Scalable component libraries, micro-frontends and design systems.",
       },
       {
-        content:
-          "Over the past three years, I have honed my skills in full-stack web development, working with both front-end and back-end technologies.",
+        title: "Performance",
+        text: "Core Web Vitals tuning, code splitting and lean bundles.",
       },
       {
-        content:
-          "I am passionate about staying up-to-date with the latest trends in the software development field and continuously improving my skills. I am a proactive problem-solver.",
+        title: "Accessibility",
+        text: "WCAG-minded UI that works for everyone, on every device.",
       },
       {
-        content:
-          "Here, you can find my personal projects, technologies I like working with or the skills I own...",
+        title: "Leadership",
+        text: "Code reviews, mentoring and pragmatic technical direction.",
       },
     ],
-
-    profile: Pooja_R,
   },
   skills: {
-    heading: "Skills",
-    subheading:
-      "Some of the tools and technologies that I know and enjoy working with.",
-    tabs: [
+    heading: "Skills & Technologies",
+    subheading: "The tools I reach for to ship great products.",
+    groups: [
       {
-        tab: "Languages",
-        color: "bg-sky-200",
-        img: <DiJavascript style={{ width: "25px", height: "25px" }} />,
-        info: [
-          {
-            logo: JavaScript,
-            language: "JavaScript",
-            level: "Advance",
-            url: "https://www.javascript.com/",
-            bgCol: "bg-yellow-200",
-          },
-          {
-            logo: Cpp,
-            language: "C++",
-            level: "Advance",
-            url: "https://cplusplus.com/",
-            bgCol: "bg-sky-200",
-          },
-          {
-            logo: C,
-            language: "C",
-            level: "Intermediate",
-            url: "https://www.cprogramming.com/",
-            bgCol: "bg-blue-200",
-          },
-          {
-            logo: CSharp,
-            language: "C#",
-            level: "Intermediate",
-            url: "https://learn.microsoft.com/en-us/dotnet/csharp/",
-            bgCol: "bg-fuchsia-300",
-          },
-          {
-            logo: Python,
-            language: "Python",
-            level: "Beginner",
-            url: "https://www.python.org/",
-            bgCol: "bg-blue-300",
-          },
+        title: "Frontend",
+        items: [
+          { name: "React", logo: React, pct: 95 },
+          { name: "TypeScript", logo: TypeScript, pct: 92 },
+          { name: "JavaScript", logo: JavaScript, pct: 96 },
+          { name: "HTML5", logo: Html, pct: 98 },
+          { name: "CSS3", logo: Css, pct: 96 },
+          { name: "Tailwind", logo: Tailwind, pct: 94 },
+          { name: "Sass", logo: Sass, pct: 90 },
+          { name: "Bootstrap", logo: Bootstrap, pct: 90 },
         ],
       },
       {
-        tab: "Frontend Development",
-        color: "bg-sky-300",
-        img: <RiReactjsLine style={{ width: "25px", height: "25px" }} />,
-        info: [
-          {
-            logo: Html,
-            language: "HTML5",
-            level: "Advance",
-            url: "https://html.com/",
-            bgCol: "bg-orange-200",
-          },
-          {
-            logo: Css,
-            language: "CSS3",
-            level: "Advance",
-            url: "https://www.css3.com/",
-            bgCol: "bg-slate-400",
-          },
-          {
-            logo: Bootstrap,
-            language: "Bootstrap",
-            level: "Advance",
-            url: "https://getbootstrap.com/",
-            bgCol: "bg-purple-300",
-          },
-          {
-            logo: Tailwind,
-            language: "Tailwind",
-            level: "Advance",
-            url: "https://tailwindcss.com/",
-            bgCol: "bg-sky-200",
-          },
-          {
-            logo: Sass,
-            language: "Sass",
-            level: "Advance",
-            url: "https://sass-lang.com/",
-            bgCol: "bg-pink-200",
-          },
-          {
-            logo: React,
-            language: "React Js",
-            level: "Intermediate",
-            url: "https://reactjs.org/",
-            bgCol: "bg-cyan-100",
-          },
-          {
-            logo: TypeScript,
-            language: "TypeScript",
-            level: "Intermediate",
-            url: "https://www.typescriptlang.org/",
-            bgCol: "bg-blue-300",
-          },
-          {
-            logo: WordPress,
-            language: "WordPress",
-            level: "Intermediate",
-            url: "https://wordpress.com/",
-            bgCol: "bg-blue-200",
-          },
-          {
-            logo: HubSpot,
-            language: "HubSpot",
-            level: "Advance",
-            url: "https://www.hubspot.com/products/crm",
-            bgCol: "bg-orange-500",
-          },
+        title: "Backend & Data",
+        items: [
+          { name: "Node.js", logo: NodeJs, pct: 80 },
+          { name: "ASP.NET Core", logo: AspDotNET, pct: 75 },
+          { name: "C#", logo: CSharp, pct: 75 },
+          { name: "PostgreSQL", logo: Postgre, pct: 75 },
+          { name: "MySQL", logo: Sql, pct: 75 },
+          { name: "MongoDB", logo: MangoDB, pct: 60 },
         ],
       },
       {
-        tab: "Backend Development",
-        color: "bg-sky-400",
-        img: <IoLogoNodejs style={{ width: "25px", height: "25px" }} />,
-        info: [
-          {
-            logo: NodeJs,
-            language: "NodeJs",
-            level: "Intermediate",
-            url: "https://nodejs.org/en/docs",
-            bgCol: "bg-lime-200",
-          },
-          {
-            logo: AspDotNET,
-            language: "ASP.NET Core",
-            level: "Intermediate",
-            url: "https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-7.0",
-            bgCol: "bg-cyan-200",
-          },
-          {
-            logo: Postgre,
-            language: "PostgreSQL",
-            level: "Intermediate",
-            url: "https://www.postgresql.org/",
-            bgCol: "bg-cyan-600",
-          },
-          {
-            logo: Sql,
-            language: "MySQL",
-            level: "Intermediate",
-            url: "https://www.mysql.com/",
-            bgCol: "bg-orange-300",
-          },
-          {
-            logo: MangoDB,
-            language: "MongoDB",
-            level: "Beginner",
-            url: "https://www.mongodb.com/",
-            bgCol: "bg-green-300",
-          },
+        title: "Languages",
+        items: [
+          { name: "C++", logo: Cpp, pct: 85 },
+          { name: "C", logo: C, pct: 70 },
+          { name: "Python", logo: Python, pct: 55 },
         ],
       },
       {
-        tab: "DevOps",
-        color: "bg-sky-500",
-        img: <BsGit style={{ width: "25px", height: "25px" }} />,
-        info: [
-          {
-            logo: Git,
-            language: "Git",
-            level: "Advance",
-            url: "https://git-scm.com/",
-            bgCol: "bg-orange-200",
-          },
-          {
-            logo: GitHub,
-            language: "Github",
-            level: "Advance",
-            url: "http://github.com/",
-            bgCol: "bg-slate-400",
-          },
-          {
-            logo: GitLab,
-            language: "GitLab",
-            level: "Advance",
-            url: "https://gitlab.com/",
-            bgCol: "bg-orange-300",
-          },
-          {
-            logo: Aws,
-            language: "AWS",
-            level: "Beginner",
-            url: "http://aws.amazon.com/",
-            bgCol: "bg-orange-300",
-          },
+        title: "Tooling & CMS",
+        items: [
+          { name: "Git", logo: Git, pct: 95 },
+          { name: "GitHub", logo: GitHub, pct: 95 },
+          { name: "GitLab", logo: GitLab, pct: 92 },
+          { name: "AWS", logo: Aws, pct: 55 },
+          { name: "WordPress", logo: WordPress, pct: 75 },
+          { name: "HubSpot", logo: HubSpot, pct: 88 },
         ],
+      },
+    ],
+  },
+  experiences: {
+    heading: "Experience",
+    subheading: "A decade of building and leading frontend work.",
+    // NOTE: placeholder companies & details — replace with your real history.
+    list: [
+      {
+        role: "Senior Frontend Engineer / Tech Lead",
+        company: "Company Name",
+        period: "2021 — Present",
+        points: [
+          "Lead a team of 6 engineers building a React + TypeScript platform serving thousands of daily users.",
+          "Created a shared design system and component library that cut UI delivery time by ~40%.",
+          "Improved Core Web Vitals across key pages, raising Lighthouse scores to 95+.",
+        ],
+        tags: ["React", "TypeScript", "Redux", "Tailwind", "Jest"],
+      },
+      {
+        role: "Frontend Engineer",
+        company: "Company Name",
+        period: "2018 — 2021",
+        points: [
+          "Owned the customer-facing web app from redesign to launch, collaborating closely with design and product.",
+          "Introduced automated testing and CI pipelines, reducing production regressions significantly.",
+          "Mentored junior developers through code reviews and pairing.",
+        ],
+        tags: ["React", "JavaScript", "Sass", "Node.js", "GitLab CI"],
+      },
+      {
+        role: "Full-Stack Developer",
+        company: "Company Name",
+        period: "2016 — 2018",
+        points: [
+          "Built responsive websites and internal tools with ASP.NET Core, SQL databases and modern JavaScript.",
+          "Delivered HubSpot and WordPress solutions that improved lead capture and marketing workflows.",
+        ],
+        tags: ["ASP.NET Core", "C#", "MySQL", "HubSpot", "WordPress"],
       },
     ],
   },
   projects: {
-    heading: "Projects",
-    subheading:
-      "Here is a quick list of some of the projects I have worked on.",
+    heading: "Selected Projects",
+    subheading: "A few things I've built and shipped.",
     projectslist: [
       {
         name: "Text Utilizer",
+        description:
+          "A handy React toolkit for transforming, analysing and cleaning text in real time.",
+        tags: ["React", "Bootstrap"],
         proimg: Project1,
         prolink: "https://poojaramesh3.github.io/text-utilizer-react-app/",
         gitlink: "https://github.com/PoojaRamesh3/text-utilizer-react-app",
       },
       {
         name: "Naming Ideas",
+        description:
+          "A creative name generator that helps spark ideas for products, pets and projects.",
+        tags: ["JavaScript", "CSS"],
         proimg: Project2,
         prolink: "https://poojaramesh3.github.io/naming-ideas/",
         gitlink: "https://github.com/PoojaRamesh3/naming-ideas",
       },
       {
-        name: "NewsLetter SignIn",
+        name: "Newsletter Sign-Up",
+        description:
+          "A full-stack newsletter subscription flow built with Node.js and a mailing-list API.",
+        tags: ["Node.js", "Express", "API"],
         proimg: Project3,
         prolink: "https://tame-ruby-ladybug-coat.cyclic.app/",
         gitlink: "https://github.com/PoojaRamesh3/News-Letter-SignUp",
@@ -309,7 +208,7 @@ export const content = {
   },
   certificates: {
     heading: "Certificates",
-    subheading: "Here are some of the online certificates I own.",
+    subheading: "Continuous learning, validated.",
     certiList: [
       {
         certiImg: PythonCertificate,
@@ -323,50 +222,40 @@ export const content = {
       },
     ],
   },
-  experiences: {
-    heading: "Experience",
-    subheading: "",
-  },
-  footer: {
-    conclusion: "Developed by Pooja R using :",
-    icons: [
+  contact: {
+    heading: "Let's build something great",
+    text: "Open to senior and lead frontend roles, consulting and interesting collaborations. My inbox is always open.",
+    email: "pooja.ramesh331@gmail.com",
+    // Put your PDF in the project's /public folder with this exact name.
+    resumeUrl: "/Pooja-R-Resume.pdf",
+    // Optional: paste a Formspree (or similar) endpoint, e.g. "https://formspree.io/f/xxxxxxxx".
+    // Leave empty to fall back to opening the visitor's email app.
+    formEndpoint: "",
+    socials: [
       {
-        icon: <RiReactjsLine style={{ width: "25px", height: "25px" }} />,
-        name: "React JS",
-        url: "https://reactjs.org/",
-      },
-      {
-        icon: <SiTypescript style={{ width: "20px", height: "25px" }} />,
-        name: "TypeScript",
-        url: "https://www.typescriptlang.org/",
-      },
-      {
-        icon: <SiTailwindcss style={{ width: "25px", height: "25px" }} />,
-        name: "Tailwind CSS",
-        url: "https://tailwindcss.com/",
-      },
-    ],
-    socialicons: [
-      {
-        icon: <SiGmail style={{ width: "25px", height: "25px" }} />,
         name: "Email",
+        icon: <SiGmail size={22} />,
         url: "mailto:pooja.ramesh331@gmail.com",
       },
       {
         name: "GitHub",
-        icon: <BsGithub style={{ width: "25px", height: "25px" }} />,
+        icon: <BsGithub size={22} />,
         url: "https://github.com/PoojaRamesh3",
       },
       {
         name: "LinkedIn",
-        icon: <AiFillLinkedin style={{ width: "25px", height: "25px" }} />,
+        icon: <AiFillLinkedin size={24} />,
         url: "https://www.linkedin.com/in/pooja--r/",
       },
       {
         name: "LeetCode",
-        icon: <SiLeetcode style={{ width: "25px", height: "25px" }} />,
-        url: "https://leetcode.com/PoojaRamesh3/",
+        icon: <RiInstagramLine size={22} />,
+        url: "https://www.instagram.com/poojaramesh__",
       },
     ],
+  },
+  footer: {
+    conclusion:
+      "Designed & built by Pooja R with React, TypeScript & Tailwind CSS",
   },
 };
