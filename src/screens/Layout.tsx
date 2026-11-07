@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { BiUpArrowAlt } from "react-icons/bi";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
@@ -10,9 +10,19 @@ import "../styles/Portfolio.css";
 import Navbar from "../components/Navbar";
 import Experience from "./Experiences";
 import Hero from "../components/Hero";
+import { updateColor, updateTheme } from "../redux/action";
 
 const Layout = () => {
+  const dispatch = useDispatch();
   const theme = useSelector((state: any) => state.theme);
+
+  // Start in dark mode. useLayoutEffect runs before the first paint, so there is no light flash.
+  // The toggle in the navbar still switches themes afterwards.
+  useLayoutEffect(() => {
+    dispatch(updateColor("dark"));
+    dispatch(updateTheme("dark"));
+  }, [dispatch]);
+
   const progressRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
   const [showTop, setShowTop] = useState(false);
