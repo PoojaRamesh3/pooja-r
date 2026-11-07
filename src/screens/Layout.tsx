@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
-import Certificates from "./Certificates";
 import Contact from "./Contact";
 import { content } from "../content";
 import "../styles/Portfolio.css";
